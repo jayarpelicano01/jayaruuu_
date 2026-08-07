@@ -25,7 +25,7 @@ export default function Hero() {
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const }}
-              className="block text-stroke"
+              className="block text-stroke lg:inline lg:mr-3"
             >
               Jay Ar
             </motion.span>
@@ -33,7 +33,7 @@ export default function Hero() {
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
-              className="block text-ink"
+              className="block text-ink lg:inline"
             >
               Pelicano
             </motion.span>
@@ -45,7 +45,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
             className="mt-8 font-mono text-lg uppercase tracking-widest text-muted sm:text-xl"
           >
-            Full-Stack<br />Developer
+            Full-Stack Developer
           </motion.p>
 
           <motion.p
