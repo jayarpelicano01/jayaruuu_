@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { site } from "@/data/site";
 import ThemeToggle from "@/components/ui/theme-toggle";
@@ -13,8 +13,33 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
+const sectionHrefs = links.map((l) => l.href.slice(1));
+
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    const sections = sectionHrefs
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   const close = () => setOpen(false);
 
@@ -36,7 +61,11 @@ export default function Navigation() {
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
-            <NavLink key={link.href} href={link.href}>
+            <NavLink
+              key={link.href}
+              href={link.href}
+              active={active === link.href.slice(1)}
+            >
               {link.label}
             </NavLink>
           ))}
@@ -94,17 +123,30 @@ export default function Navigation() {
   );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({
+  href,
+  children,
+  active = false,
+}: {
+  href: string;
+  children: React.ReactNode;
+  active?: boolean;
+}) {
   return (
     <Link
       href={href}
       className="group font-mono text-sm uppercase tracking-widest text-ink transition-colors hover:text-muted"
+      aria-current={active ? "true" : undefined}
     >
       <span className="relative">
         {children}
         <span
           aria-hidden
-          className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100"
+          className={`absolute -bottom-1 left-0 h-px w-full origin-left bg-current transition-transform duration-300 ease-out ${
+            active
+              ? "scale-x-100"
+              : "scale-x-0 group-hover:scale-x-100"
+          }`}
         />
       </span>
     </Link>
