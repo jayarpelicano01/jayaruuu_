@@ -1,11 +1,28 @@
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/ui/reveal";
+import { site } from "@/data/site";
 
-const values = [
-  "Interested in full-stack development",
-  "Enjoys building complete systems",
-  "Values practical problem solving",
-  "Always learning",
+const skills = [
+  {
+    name: "Full-Stack Development",
+    description:
+      "I design and build complete systems end-to-end, from relational schemas and APIs to responsive interfaces that people actually use.",
+  },
+  {
+    name: "Frontend Engineering",
+    description:
+      "I craft clean, responsive interfaces with React, Next.js, and TypeScript, keeping performance and accessibility in mind.",
+  },
+  {
+    name: "Backend & APIs",
+    description:
+      "I build RESTful APIs with Node.js, Express.js, and Spring Boot, and I keep data consistent with normalized MySQL schemas.",
+  },
+  {
+    name: "Problem Solving",
+    description:
+      "I break down messy requirements into clear, practical solutions, and I carry them from idea to deployment.",
+  },
 ];
 
 export default function About() {
@@ -32,20 +49,40 @@ export default function About() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((item, i) => (
-            <Reveal key={item} delay={0.05 * i}>
-              <div className="border border-line px-5 py-4">
-                <span className="font-mono text-xs text-muted">
-                  {String(i + 1).padStart(2, "0")}
+        <Reveal delay={0.2}>
+          <p className="mt-6 max-w-2xl text-lg text-muted">
+            My background includes an OJT internship with the General Services
+            Unit and ICT Department of the University of the Eastern
+            Philippines, where I shipped a production job request system, plus
+            a capstone electronic voting platform, an IoT agriculture project,
+            and more. I graduated with a degree in Information Technology and
+            ranked Magna Cum Laude.
+          </p>
+        </Reveal>
+
+        <div className="mt-12 grid gap-3 sm:grid-cols-2">
+          {skills.map((skill, i) => (
+            <Reveal key={skill.name} delay={0.05 * i}>
+              <div className="flex h-full flex-col border border-line p-6">
+                <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                  {String(i + 1).padStart(2, "0")} · Skill
                 </span>
-                <h3 className="mt-2 text-sm font-medium tracking-tight">
-                  {item}
+                <h3 className="mt-3 text-lg font-medium tracking-tight">
+                  {skill.name}
                 </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {skill.description}
+                </p>
               </div>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.2}>
+          <p className="mt-10 font-mono text-xs uppercase tracking-widest text-muted">
+            {site.fullName} · {site.city} · {site.email}
+          </p>
+        </Reveal>
       </div>
     </section>
   );
