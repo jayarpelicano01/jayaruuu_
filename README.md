@@ -88,6 +88,20 @@ Deploy on **Vercel**:
 2. Import the repo in [Vercel](https://vercel.com).
 3. Set a custom domain if desired.
 
+## Email Setup
+
+The contact form sends messages to `jayarpelicano01@gmail.com` via [Resend](https://resend.com).
+
+1. Create a free Resend account and add your domain (or use their sandbox).
+2. Get an **API key** and create a `.env.local` in the project root:
+
+   ```bash
+   RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxx
+   ```
+
+3. For production delivery, set a verified sender domain in Resend and update the `from` address in `app/api/contact/route.ts` (the default uses `onboarding@resend.dev`, which only sends to your own verified account).
+4. In Vercel, add `RESEND_API_KEY` as an environment variable.
+
 ## Content Notes
 
 - All portfolio, project, and experience content lives in `data/` and is driven from `data/projects.ts`.
