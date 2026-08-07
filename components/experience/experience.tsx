@@ -34,10 +34,10 @@ function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
-        <h3 className="text-3xl font-medium tracking-tight sm:text-4xl">
+        <h3 className="text-4xl font-medium tracking-tight sm:text-5xl">
           {item.title}
         </h3>
-        <span className="font-mono text-sm uppercase tracking-widest text-muted">
+        <span className="font-mono text-base uppercase tracking-widest text-muted">
           {item.year}
         </span>
       </div>
@@ -50,17 +50,17 @@ function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
       >
         <div className="pt-6">
           <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1">
-            <span className="font-mono text-sm uppercase tracking-widest text-muted/70">
+            <span className="font-mono text-base uppercase tracking-widest text-muted/70">
               {item.kind}
             </span>
             {item.org ? (
-              <span className="font-mono text-sm uppercase tracking-widest text-muted/70">
+              <span className="font-mono text-base uppercase tracking-widest text-muted/70">
                 {item.org}
               </span>
             ) : null}
-            <span className="text-lg text-muted">{item.role}</span>
+            <span className="text-xl text-muted">{item.role}</span>
           </div>
-          <ul className="mt-6 space-y-3 text-lg leading-relaxed text-ink/80">
+          <ul className="mt-6 space-y-3 text-xl leading-relaxed text-ink/80">
             {item.points.map((point) => (
               <li key={point} className="flex gap-4">
                 <span aria-hidden className="font-mono text-sm text-muted">

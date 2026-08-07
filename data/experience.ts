@@ -61,8 +61,10 @@ export const education: Education = {
   degree: "Bachelor of Science in Information Technology",
   years: "2022–2026",
   details: [
-    "Cumulative GPA: 1.414 · Magna Cum Laude",
-    "Relevant coursework: Data Structures & Algorithms, Database Management, Web Development, OOP, Networking, Information Assurance & Security.",
+    "Graduated with the distinction Magna Cum Laude, carrying a cumulative GPA of 1.414.",
+    "Built a strong foundation in software development through coursework in Data Structures & Algorithms, Database Management, Web Development, OOP, Networking, and Information Assurance & Security.",
+    "Applied classroom knowledge to real projects: an OJT production system for the university GSU & ICT Department, a capstone electronic voting platform, and an IoT agriculture monitoring system.",
+    "Represented the program in technical competitions and served in collaborative, project-based teams throughout the program.",
   ],
 }
 
