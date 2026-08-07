@@ -13,6 +13,7 @@ export type Project = {
   liveDemoLabel?: string
   liveNote?: string
   source?: string
+  status: "Live" | "LAN" | "Archived" | "This Site"
   highlights: string[]
   caseStudy: {
     overview: string
@@ -43,6 +44,7 @@ export const projects: Project[] = [
     liveDemo: "https://generalservicesunitsystem.vercel.app/",
     liveDemoLabel: "Live Demo",
     source: "https://github.com/jayarpelicano01",
+    status: "Live",
     highlights: ["Full-stack system", "Automated workflows", "Accomplishment reports"],
     caseStudy: {
       overview:
@@ -122,6 +124,7 @@ export const projects: Project[] = [
     liveDemoLabel: "LAN Demo",
     liveNote: "This system runs on the campus local network and is not publicly deployed.",
     source: "https://github.com/jayarpelicano01",
+    status: "LAN",
     highlights: ["Voter anonymity", "Real-time tallying", "Database design"],
     caseStudy: {
       overview:
@@ -199,6 +202,7 @@ export const projects: Project[] = [
     liveDemo: "https://urds-system-v2.vercel.app/urds/home",
     liveDemoLabel: "Live Demo",
     source: "https://github.com/jayarpelicano01",
+    status: "Live",
     highlights: ["API development", "Document workflows", "Database architecture"],
     caseStudy: {
       overview:
@@ -269,6 +273,7 @@ export const projects: Project[] = [
     liveNote:
       "This capstone project was adapted by a co-developer for their own thesis and is now archived. It is not publicly deployed.",
     source: "https://github.com/jayarpelicano01",
+    status: "Archived",
     highlights: ["IoT + Arduino", "Sensor integration", "Automated irrigation"],
     caseStudy: {
       overview:
@@ -348,6 +353,7 @@ export const projects: Project[] = [
     imageAlt: "This portfolio website",
     liveNote: "This website.",
     source: "https://github.com/jayarpelicano01",
+    status: "This Site",
     highlights: ["Modern stack", "Editorial design", "Responsive + accessible"],
     caseStudy: {
       overview:

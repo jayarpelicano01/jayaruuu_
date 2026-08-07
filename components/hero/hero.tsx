@@ -103,8 +103,8 @@ export default function Hero() {
             captionText={`@${site.handle}`}
             containerHeight="24rem"
             containerWidth="100%"
-            imageHeight="384px"
-            imageWidth="384px"
+            imageHeight="368px"
+            imageWidth="276px"
             rotateAmplitude={10}
             scaleOnHover={1.05}
             showMobileWarning={false}

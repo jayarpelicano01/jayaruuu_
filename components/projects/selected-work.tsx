@@ -16,52 +16,68 @@ export default function SelectedWork() {
         />
       </Reveal>
 
-      <div className="mt-4">
+      <div className="mt-8 grid gap-8 lg:grid-cols-2">
         {projects.map((project) => (
           <Reveal key={project.slug}>
             <Link
               href={`/projects/${project.slug}`}
-              className="group grid grid-cols-1 gap-x-6 border-b border-line py-10 sm:py-12 lg:grid-cols-12"
+              className="group flex h-full flex-col overflow-hidden border border-line bg-paper"
             >
-              <div className="flex items-start gap-6 lg:col-span-4">
-                <span className="font-mono text-xs text-muted">
-                  {project.number}
-                </span>
-                <h3 className="text-3xl font-medium tracking-tight transition-colors group-hover:text-muted sm:text-4xl">
-                  {project.title}
-                </h3>
+              <div className="relative aspect-[4/3] overflow-hidden border-b border-line">
+                <Image
+                  src={project.image}
+                  alt={project.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
 
-              <div className="lg:col-span-4">
-                <p className="text-md text-muted">{project.category}</p>
-                <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1">
+              <div className="flex flex-1 flex-col p-7 sm:p-10">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs text-muted">
+                    {project.number}
+                  </span>
+                  <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted">
+                    <span
+                      aria-hidden
+                      className="h-1.5 w-1.5 rounded-full bg-current"
+                    />
+                    {project.status}
+                  </span>
+                </div>
+
+                <h3 className="mt-5 text-3xl font-medium tracking-tight sm:text-4xl">
+                  {project.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted">{project.category}</p>
+
+                <p className="mt-4 max-w-md text-md leading-relaxed text-ink/80">
+                  {project.description}
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-x-3 gap-y-1.5">
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="font-mono text-xs uppercase tracking-widest text-muted/70"
+                      className="border border-line px-2.5 py-1 font-mono text-xs uppercase tracking-widest text-muted"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-              </div>
 
-              <div className="mt-6 lg:col-span-4 lg:mt-0 lg:flex lg:items-end lg:justify-end">
-                <div className="hidden w-28 overflow-hidden lg:block">
-                  <div className="relative aspect-[4/3] transition-transform duration-500 group-hover:scale-105">
-                    <Image
-                      src={project.image}
-                      alt={project.imageAlt}
-                      fill
-                      sizes="7rem"
-                      className="object-cover"
-                    />
-                  </div>
+                <div className="mt-auto flex items-center gap-6 pt-8">
+                  <span className="inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink">
+                    View Project
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  {project.liveDemo ? (
+                    <span className="font-mono text-sm uppercase tracking-widest text-muted transition-colors hover:text-ink">
+                      {project.liveDemoLabel ?? "Live Demo"}
+                    </span>
+                  ) : null}
                 </div>
-                <span className="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink lg:mt-0">
-                  View
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
               </div>
             </Link>
           </Reveal>
