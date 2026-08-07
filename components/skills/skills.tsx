@@ -10,7 +10,7 @@ export default function Skills() {
     <section id="skills" className="border-t border-line bg-paper">
       <div className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
         <Reveal>
-          <SectionHeading index="04" title="Skills" meta="Proven by projects" />
+          <SectionHeading index="05" title="Skills" meta="Proven by projects" />
         </Reveal>
 
         <div className="mt-8 grid gap-12 lg:grid-cols-2">
