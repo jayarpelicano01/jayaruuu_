@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { site } from "@/data/site";
+import ThemeToggle from "@/components/ui/theme-toggle";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -47,17 +48,21 @@ export default function Navigation() {
           >
             CV <span aria-hidden>↗</span>
           </a>
+          <ThemeToggle />
         </div>
 
-        <button
-          type="button"
-          className="flex h-10 w-10 items-center justify-center md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="flex h-10 w-10 items-center justify-center md:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {open ? (
