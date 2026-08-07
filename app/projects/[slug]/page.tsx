@@ -131,7 +131,14 @@ export default async function CaseStudyPage({ params }: Props) {
       {project.gallery.length > 0 ? (
         <div className="mx-auto mt-14 max-w-content px-5 sm:px-8">
           <Reveal>
-            <ProjectGallery items={project.gallery} />
+            <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
+              Gallery
+            </h2>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <div className="mt-6">
+              <ProjectGallery items={project.gallery} />
+            </div>
           </Reveal>
         </div>
       ) : null}
