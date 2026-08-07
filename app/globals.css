@@ -39,6 +39,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Hollow / outlined text */
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-ink);
+}
+
 /* Custom cursor */
 @media (pointer: fine) {
   body.has-cursor,

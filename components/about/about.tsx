@@ -25,7 +25,7 @@ export default function About() {
 
         <Reveal delay={0.15}>
           <p className="mt-6 max-w-2xl text-lg text-muted">
-            I focus on full-stack development — understanding both the
+            I focus on full-stack development, understanding both the
             frontend and the backend so I can build complete systems from idea
             to deployment. I care about clean architecture, data integrity,
             and how each part fits together.

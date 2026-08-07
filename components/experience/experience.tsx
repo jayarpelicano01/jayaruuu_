@@ -32,7 +32,7 @@ export default function Experience() {
                   {item.points.map((point) => (
                     <li key={point} className="flex gap-3">
                       <span aria-hidden className="font-mono text-xs text-muted">
-                        —
+                        ·
                       </span>
                       <span>{point}</span>
                     </li>

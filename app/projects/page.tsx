@@ -7,14 +7,14 @@ import Reveal from "@/components/ui/reveal";
 export const metadata = {
   title: "Projects",
   description:
-    "Case studies from Jay Ar Pelicano — GSU System, CampusChoice, URDS, Smart Farming, and this portfolio.",
+    "Case studies from Jay Ar Pelicano: GSU System, CampusChoice, URDS, Smart Farming, and this portfolio.",
 };
 
 export default function ProjectsPage() {
   return (
     <div className="mx-auto max-w-content px-5 pb-20 pt-32 sm:px-8 sm:pt-40">
       <Reveal>
-        <SectionHeading index="—" title="Projects" meta="Case Studies" />
+        <SectionHeading index="/" title="Projects" meta="Case Studies" />
       </Reveal>
 
       <div className="mt-8 grid gap-8 sm:grid-cols-2">

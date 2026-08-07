@@ -1,4 +1,4 @@
-# Jay Ar Pelicano — Portfolio
+# Jay Ar Pelicano | Portfolio
 
 The professional developer portfolio of **Agustin Ronato Pelicano Jr.** (Jay Ar), a junior software developer and full-stack developer.
 
@@ -8,16 +8,16 @@ A portfolio designed around one question:
 
 > How can a recruiter understand my ability in less than a minute?
 
-It presents Jay Ar as a junior developer who can actually build complete software systems — through strong project case studies rather than generic skill claims.
+It presents Jay Ar as a junior developer who can actually build complete software systems, through strong project case studies rather than generic skill claims.
 
 ## Tech Stack
 
-- **Next.js** (App Router) — 16
+- **Next.js** (App Router) · 16
 - **TypeScript**
-- **Tailwind CSS** — v4
-- **Framer Motion** — animations
-- **Lucide React** — icons
-- **next/font** — Space Grotesk + JetBrains Mono
+- **Tailwind CSS** · v4
+- **Framer Motion** · animations
+- **Lucide React** · icons
+- **next/font** · Space Grotesk + JetBrains Mono
 
 ## Features
 

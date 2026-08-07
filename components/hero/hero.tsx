@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden border-b border-line">
-      <div className="mx-auto grid max-w-content gap-10 px-5 pt-32 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:items-center lg:gap-16 lg:pt-40">
+      <div className="mx-auto grid max-w-content gap-10 px-5 pt-32 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:items-center lg:gap-10 lg:pt-40">
         <div className="pb-4">
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -17,15 +17,15 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
             className="font-mono text-xs uppercase tracking-widest text-muted"
           >
-            Junior Software Developer — Philippines
+            Junior Software Developer · Philippines
           </motion.p>
 
-          <h1 className="mt-6 text-[15vw] font-medium leading-[0.9] tracking-tight sm:text-6xl lg:text-[5.5rem]">
+          <h1 className="mt-6 text-[15vw] font-bold leading-[0.9] tracking-tight sm:text-6xl lg:text-[5.5rem]">
             <motion.span
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const }}
-              className="block"
+              className="block text-stroke"
             >
               Jay Ar
             </motion.span>
@@ -33,7 +33,7 @@ export default function Hero() {
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
-              className="block"
+              className="block text-ink"
             >
               Pelicano
             </motion.span>
@@ -101,7 +101,7 @@ export default function Hero() {
             containerHeight="22rem"
             containerWidth="100%"
             imageHeight="352px"
-            imageWidth="264px"
+            imageWidth="352px"
             rotateAmplitude={10}
             scaleOnHover={1.05}
             showMobileWarning={false}

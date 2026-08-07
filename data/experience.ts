@@ -13,7 +13,7 @@ export const experience: ExperienceItem[] = [
     kind: "OJT INTERNSHIP",
     title: "GSU & ICT Department",
     org: "University of the Eastern Philippines",
-    role: "OJT Trainee — Full-Stack Developer",
+    role: "OJT Trainee / Full-Stack Developer",
     points: [
       "Engineered and deployed a full-stack Job Request and Ordering System using Node.js, Express.js, and MySQL.",
       "Developed a responsive frontend with Next.js and TypeScript, improving data processing times.",
@@ -42,7 +42,7 @@ export const experience: ExperienceItem[] = [
     points: [
       "Co-developed an IoT system integrating Arduino sensors with a web dashboard.",
       "Architected a data-driven backend with Spring Boot, Node.js, Express.js, and MySQL.",
-      "Champion — UEP 2nd Arduino Innovator Challenge (2025).",
+      "Champion · UEP 2nd Arduino Innovator Challenge (2025).",
     ],
   },
 ]
@@ -61,12 +61,12 @@ export const education: Education = {
   degree: "Bachelor of Science in Information Technology",
   years: "2022–2026",
   details: [
-    "Cumulative GPA: 1.414 — Magna Cum Laude",
+    "Cumulative GPA: 1.414 · Magna Cum Laude",
     "Relevant coursework: Data Structures & Algorithms, Database Management, Web Development, OOP, Networking, Information Assurance & Security.",
   ],
 }
 
 export const honors: string[] = [
-  "Magna Cum Laude — BS Information Technology (2026)",
-  "Champion — UEP 2nd Arduino Innovator Challenge, SmartFarming (2025)",
+  "Magna Cum Laude · BS Information Technology (2026)",
+  "Champion · UEP 2nd Arduino Innovator Challenge, SmartFarming (2025)",
 ]
