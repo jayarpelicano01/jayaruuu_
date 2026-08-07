@@ -52,6 +52,8 @@ export default function SelectedWork() {
                     <Image
                       src={project.image}
                       alt={project.imageAlt}
+                      fill
+                      sizes="7rem"
                       className="object-cover grayscale"
                     />
                   </div>
