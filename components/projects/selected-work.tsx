@@ -17,7 +17,7 @@ export default function SelectedWork() {
       </Reveal>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-2">
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           <Reveal key={project.slug}>
             <Link
               href={`/projects/${project.slug}`}
@@ -28,6 +28,7 @@ export default function SelectedWork() {
                   src={project.image}
                   alt={project.imageAlt}
                   fill
+                  loading={i === 0 ? "eager" : "lazy"}
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { site } from "@/data/site";
@@ -49,22 +48,13 @@ export default function Navigation() {
       <nav className="mx-auto flex max-w-content items-center justify-between px-5 py-4 sm:px-8">
         <Link
           href="/#top"
-          className="group flex flex-col leading-none text-ink"
+          className="flex flex-col leading-none text-ink"
           onClick={close}
         >
-          <span className="flex items-center gap-2">
-            <Image
-              src="/images/logo/jayaruuu_logo.png"
-              alt=""
-              width={24}
-              height={24}
-              className="h-6 w-6 rounded-full object-cover"
-            />
-            <span className="text-base font-medium tracking-tight">
-              @{site.handle}
-            </span>
+          <span className="text-base font-medium tracking-tight">
+            @{site.handle}
           </span>
-          <span className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-muted">
             {site.fullName}
           </span>
         </Link>
