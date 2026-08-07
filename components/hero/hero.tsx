@@ -23,7 +23,7 @@ export default function Hero() {
             Junior Software Developer · Philippines
           </motion.p>
 
-          <h1 className="mt-6 text-[15vw] font-bold leading-[0.9] tracking-tight sm:text-6xl lg:text-[5.5rem]">
+          <h1 className="mt-6 text-[15vw] font-bold leading-[0.9] tracking-tight sm:text-6xl lg:whitespace-nowrap lg:text-[4.5rem] xl:text-[5rem]">
             <motion.span
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-10 font-mono text-lg uppercase tracking-widest text-muted sm:text-xl"
+            className="mt-10 font-mono text-lg uppercase tracking-widest text-muted sm:text-xl lg:whitespace-nowrap"
           >
             Full-Stack Developer
           </motion.p>
