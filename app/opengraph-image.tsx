@@ -1,8 +1,15 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 export const alt = "Jay Ar Pelicano | Junior Software Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+const logo = readFileSync(
+  join(process.cwd(), "public", "images", "logo", "jayaruuu_logo.png")
+).toString("base64");
+const logoSrc = `data:image/png;base64,${logo}`;
 
 export default async function OpengraphImage() {
   return new ImageResponse(
@@ -29,7 +36,16 @@ export default async function OpengraphImage() {
             color: "#666666",
           }}
         >
-          <span>JAY AR PELICANO</span>
+          <span style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <img
+              src={logoSrc}
+              width={48}
+              height={48}
+              style={{ borderRadius: 9999 }}
+              alt=""
+            />
+            <span>JAY AR PELICANO</span>
+          </span>
           <span>@jayaruuu_</span>
         </div>
         <div
