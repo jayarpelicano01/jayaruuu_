@@ -12,7 +12,7 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-svh flex-col justify-center overflow-hidden border-b border-line"
     >
-      <div className="mx-auto grid w-full max-w-content gap-10 px-5 py-32 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-center lg:gap-10 lg:py-40">
+      <div className="mx-auto grid w-full max-w-content gap-10 px-5 py-32 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-center lg:gap-16 lg:py-40">
         <div className="pb-4">
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -46,7 +46,7 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-8 font-mono text-lg uppercase tracking-widest text-muted sm:text-xl"
+            className="mt-10 font-mono text-lg uppercase tracking-widest text-muted sm:text-xl"
           >
             Full-Stack Developer
           </motion.p>
@@ -64,7 +64,7 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-14 flex flex-wrap items-center gap-6"
+            className="mt-16 flex flex-wrap items-center gap-6"
           >
             <a
               href="#work"
@@ -95,22 +95,32 @@ export default function Hero() {
           initial={reduce ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
-          className="relative mx-auto w-full max-w-[18rem] sm:max-w-[20rem] lg:max-w-[24rem]"
+          className="relative mx-auto flex w-full max-w-[20rem] flex-col items-center sm:max-w-[22rem] lg:max-w-[28rem]"
         >
           <TiltedCard
             imageSrc="/images/profile/portrait.jpg"
             altText={`Professional portrait of ${site.name}`}
             captionText={`@${site.handle}`}
-            containerHeight="24rem"
+            containerHeight="28rem"
             containerWidth="100%"
-            imageHeight="368px"
-            imageWidth="276px"
+            imageHeight="432px"
+            imageWidth="324px"
             rotateAmplitude={10}
             scaleOnHover={1.05}
             showMobileWarning={false}
             showTooltip={true}
             displayOverlayContent={false}
           />
+
+          <motion.p
+            initial={reduce ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] as const }}
+            className="mt-6 inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink"
+          >
+            <span aria-hidden className="h-2 w-2 rounded-full bg-current" />
+            Open to work
+          </motion.p>
         </motion.div>
       </div>
     </section>
