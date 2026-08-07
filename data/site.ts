@@ -3,7 +3,8 @@ export const site = {
   fullName: "Agustin Ronato Pelicano Jr.",
   handle: "jayaruuu_",
   roles: ["Junior Software Developer", "Full-Stack Developer"],
-  tagline: "I build practical digital products from idea to deployment.",
+  tagline:
+    "I build practical digital products from idea to deployment. From designing the database and wiring up the backend to crafting the interfaces people actually use, I carry a feature all the way to production and ship things that work.",
   location: "Philippines",
   city: "Paranaque City, Philippines",
   email: "jayarpelicano01@gmail.com",

@@ -8,8 +8,11 @@ export default function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="top" className="relative overflow-hidden border-b border-line">
-      <div className="mx-auto grid max-w-content gap-10 px-5 pt-32 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:items-center lg:gap-10 lg:pt-40">
+    <section
+      id="top"
+      className="relative flex min-h-svh flex-col justify-center overflow-hidden border-b border-line"
+    >
+      <div className="mx-auto grid w-full max-w-content gap-10 px-5 py-32 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-center lg:gap-10 lg:py-40">
         <div className="pb-4">
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -52,7 +55,7 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-6 max-w-md text-lg text-muted"
+            className="mt-10 max-w-xl text-lg leading-relaxed text-muted"
           >
             {site.tagline}
           </motion.p>
@@ -61,7 +64,7 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-10 flex flex-wrap items-center gap-6"
+            className="mt-14 flex flex-wrap items-center gap-6"
           >
             <a
               href="#work"
@@ -92,16 +95,16 @@ export default function Hero() {
           initial={reduce ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
-          className="relative mx-auto w-full max-w-[16rem] sm:max-w-[18rem] lg:max-w-[22rem]"
+          className="relative mx-auto w-full max-w-[18rem] sm:max-w-[20rem] lg:max-w-[24rem]"
         >
           <TiltedCard
             imageSrc="/images/profile/portrait.jpg"
             altText={`Professional portrait of ${site.name}`}
             captionText={`@${site.handle}`}
-            containerHeight="22rem"
+            containerHeight="24rem"
             containerWidth="100%"
-            imageHeight="352px"
-            imageWidth="352px"
+            imageHeight="384px"
+            imageWidth="384px"
             rotateAmplitude={10}
             scaleOnHover={1.05}
             showMobileWarning={false}

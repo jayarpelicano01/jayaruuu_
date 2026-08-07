@@ -26,7 +26,7 @@ export default function Navigation() {
           className="flex flex-col leading-none text-ink"
           onClick={close}
         >
-          <span className="text-sm font-medium tracking-tight">
+          <span className="text-base font-medium tracking-tight">
             @{site.handle}
           </span>
           <span className="font-mono text-[10px] uppercase tracking-widest text-muted">
