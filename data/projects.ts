@@ -342,7 +342,7 @@ export const projects: Project[] = [
   {
     slug: "portfolio",
     number: "05",
-    title: "This Portfolio",
+    title: "jayaruuu_",
     category: "Developer Portfolio Website",
     description:
       "The website you are viewing, built with Next.js, TypeScript, Tailwind, and Framer Motion.",
