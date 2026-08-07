@@ -1,0 +1,103 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { site } from "@/data/site";
+
+const links = [
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
+
+export default function Navigation() {
+  const [open, setOpen] = useState(false);
+
+  const close = () => setOpen(false);
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line/60 bg-bg/85 backdrop-blur-sm">
+      <nav className="mx-auto flex max-w-content items-center justify-between px-5 py-4 sm:px-8">
+        <Link
+          href="/#top"
+          className="flex flex-col leading-none text-ink"
+          onClick={close}
+        >
+          <span className="text-sm font-medium tracking-tight">
+            Jay Ar Pelicano
+          </span>
+          <span className="font-mono text-[10px] uppercase tracking-widest text-muted">
+            @{site.handle}
+          </span>
+        </Link>
+
+        <div className="hidden items-center gap-8 md:flex">
+          {links.map((link) => (
+            <NavLink key={link.href} href={link.href}>
+              {link.label}
+            </NavLink>
+          ))}
+          <a
+            href={site.resume}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="inline-flex items-center gap-1 font-mono text-sm uppercase tracking-widest text-ink hover:text-muted"
+          >
+            CV <span aria-hidden>↗</span>
+          </a>
+        </div>
+
+        <button
+          type="button"
+          className="flex h-10 w-10 items-center justify-center md:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </nav>
+
+      {open ? (
+        <div className="border-t border-line bg-bg md:hidden">
+          <div className="flex flex-col gap-1 px-5 py-4">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={close}
+                className="border-b border-line py-3 font-medium tracking-tight"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <a
+              href={site.resume}
+              target="_blank"
+              rel="noreferrer noopener"
+              onClick={close}
+              className="py-3 font-mono uppercase tracking-widest text-muted"
+            >
+              View CV ↗
+            </a>
+          </div>
+        </div>
+      ) : null}
+    </header>
+  );
+}
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="font-mono text-sm uppercase tracking-widest text-ink transition-colors hover:text-muted"
+    >
+      <span className="underline decoration-transparent underline-offset-8 transition hover:decoration-ink">
+        {children}
+      </span>
+    </Link>
+  );
+}
