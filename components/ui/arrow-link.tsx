@@ -22,10 +22,19 @@ export default function ArrowLink({
 
   const inner = (
     <>
-      <span className="under-desc underline decoration-line underline-offset-4 transition group-hover:decoration-ink">
+      <span className="relative pb-1">
         {children}
+        <span
+          aria-hidden
+          className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100"
+        />
       </span>
-      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      <span
+        aria-hidden
+        className="inline-flex transform transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+      >
+        <ArrowUpRight className="h-4 w-4" />
+      </span>
     </>
   );
 

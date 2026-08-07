@@ -63,8 +63,8 @@ export default function About() {
         <div className="mt-12 grid gap-3 sm:grid-cols-2">
           {skills.map((skill, i) => (
             <Reveal key={skill.name} delay={0.05 * i}>
-              <div className="flex h-full flex-col border border-line p-6">
-                <span className="font-mono text-xs uppercase tracking-widest text-muted">
+              <div className="group flex h-full flex-col border border-line p-6 transition-colors duration-300 hover:border-ink/40">
+                <span className="font-mono text-xs uppercase tracking-widest text-muted transition-colors duration-300 group-hover:text-ink">
                   {String(i + 1).padStart(2, "0")} · Skill
                 </span>
                 <h3 className="mt-3 text-lg font-medium tracking-tight">

@@ -21,7 +21,7 @@ export default function SelectedWork() {
           <Reveal key={project.slug}>
             <Link
               href={`/projects/${project.slug}`}
-              className="group flex h-full flex-col overflow-hidden border border-line bg-paper"
+              className="group flex h-full flex-col overflow-hidden border border-line bg-paper transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.06)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden border-b border-line">
                 <Image

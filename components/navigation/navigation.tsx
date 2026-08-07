@@ -98,10 +98,14 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   return (
     <Link
       href={href}
-      className="font-mono text-sm uppercase tracking-widest text-ink transition-colors hover:text-muted"
+      className="group font-mono text-sm uppercase tracking-widest text-ink transition-colors hover:text-muted"
     >
-      <span className="underline decoration-transparent underline-offset-8 transition hover:decoration-ink">
+      <span className="relative">
         {children}
+        <span
+          aria-hidden
+          className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100"
+        />
       </span>
     </Link>
   );

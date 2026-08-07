@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { site } from "@/data/site";
 import TiltedCard from "@/components/ui/tilted-card/TiltedCard";
+import Magnetic from "@/components/ui/magnetic";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -66,19 +67,34 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             className="mt-16 flex flex-wrap items-center gap-6"
           >
-            <a
-              href="#work"
-              className="inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink hover:text-muted"
-            >
-              View My Work
-              <span aria-hidden>↓</span>
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-muted hover:text-ink"
-            >
-              Get in touch <span aria-hidden>→</span>
-            </a>
+            <Magnetic>
+              <a
+                href="#work"
+                className="group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink hover:text-muted"
+              >
+                View My Work
+                <span
+                  aria-hidden
+                  className="transition-transform duration-300 group-hover:translate-y-0.5"
+                >
+                  ↓
+                </span>
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-muted hover:text-ink"
+              >
+                Get in touch{" "}
+                <span
+                  aria-hidden
+                  className="transition-transform duration-300 group-hover:translate-x-0.5"
+                >
+                  →
+                </span>
+              </a>
+            </Magnetic>
           </motion.div>
 
           <motion.p
