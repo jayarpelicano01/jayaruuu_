@@ -45,35 +45,33 @@ export default function Contact() {
 
   return (
     <section id="contact" className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-32">
-      <Reveal>
-        <h2 className="text-[14vw] font-medium leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
-          Let&apos;s
-          <br />
-          work
-          <br />
-          together.
-        </h2>
-      </Reveal>
-
-      <div className="mt-8 grid gap-12 lg:grid-cols-2">
-        <Reveal delay={0.1}>
-          <p className="max-w-md text-lg text-muted">
-            I&apos;m currently open to opportunities as a Junior Software
-            Developer or Full-Stack Developer. Send a message and it lands
-            straight in my inbox.
-          </p>
-
-          <div className="mt-12 flex flex-wrap gap-x-10 gap-y-4">
-            <ArrowLink href={`mailto:${site.email}`}>Email</ArrowLink>
-            <ArrowLink href={site.github}>GitHub</ArrowLink>
-            <ArrowLink href={site.linkedin}>LinkedIn</ArrowLink>
-            <ArrowLink href={site.resume} external>
-              CV
-            </ArrowLink>
+      <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+        <Reveal>
+          <div>
+            <h2 className="text-[14vw] font-medium leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
+              Let&apos;s
+              <br />
+              work
+              <br />
+              together.
+            </h2>
+            <p className="mt-8 max-w-md text-lg text-muted">
+              I&apos;m currently open to opportunities as a Junior Software
+              Developer or Full-Stack Developer. Send a message and it lands
+              straight in my inbox.
+            </p>
+            <div className="mt-12 flex flex-wrap gap-x-10 gap-y-4">
+              <ArrowLink href={`mailto:${site.email}`}>Email</ArrowLink>
+              <ArrowLink href={site.github}>GitHub</ArrowLink>
+              <ArrowLink href={site.linkedin}>LinkedIn</ArrowLink>
+              <ArrowLink href={site.resume} external>
+                CV
+              </ArrowLink>
+            </div>
           </div>
         </Reveal>
 
-        <Reveal delay={0.15}>
+        <Reveal delay={0.1} className="lg:pt-6">
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-6 border border-line bg-paper p-6 sm:p-8"
