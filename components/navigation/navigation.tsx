@@ -27,10 +27,10 @@ export default function Navigation() {
           onClick={close}
         >
           <span className="text-sm font-medium tracking-tight">
-            Jay Ar Pelicano
+            @{site.handle}
           </span>
           <span className="font-mono text-[10px] uppercase tracking-widest text-muted">
-            @{site.handle}
+            {site.fullName}
           </span>
         </Link>
 

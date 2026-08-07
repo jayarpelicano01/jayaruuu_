@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { site } from "@/data/site";
+import TiltedCard from "@/components/ui/tilted-card/TiltedCard";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -94,16 +94,20 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
           className="relative mx-auto w-full max-w-[16rem] sm:max-w-[18rem] lg:max-w-[22rem]"
         >
-          <div className="relative aspect-[3/4] overflow-hidden border border-line">
-            <Image
-              src="/images/profile/portrait.jpg"
-              alt={`Professional portrait of ${site.name}`}
-              fill
-              priority
-              sizes="(min-width: 1024px) 22rem, 18rem"
-              className="object-cover object-top"
-            />
-          </div>
+          <TiltedCard
+            imageSrc="/images/profile/portrait.jpg"
+            altText={`Professional portrait of ${site.name}`}
+            captionText={`@${site.handle}`}
+            containerHeight="22rem"
+            containerWidth="100%"
+            imageHeight="352px"
+            imageWidth="264px"
+            rotateAmplitude={10}
+            scaleOnHover={1.05}
+            showMobileWarning={false}
+            showTooltip={true}
+            displayOverlayContent={false}
+          />
         </motion.div>
       </div>
     </section>
