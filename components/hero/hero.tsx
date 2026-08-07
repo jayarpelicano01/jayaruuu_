@@ -101,7 +101,7 @@ export default function Hero() {
               fill
               priority
               sizes="(min-width: 1024px) 24rem, 20rem"
-              className="object-cover grayscale"
+              className="object-cover"
             />
           </div>
         </motion.div>

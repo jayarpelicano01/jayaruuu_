@@ -54,7 +54,7 @@ export default function SelectedWork() {
                       alt={project.imageAlt}
                       fill
                       sizes="7rem"
-                      className="object-cover grayscale"
+                      className="object-cover"
                     />
                   </div>
                 </div>

@@ -30,7 +30,7 @@ export default function ProjectsPage() {
                   alt={project.imageAlt}
                   fill
                   sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover grayscale transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-col gap-3 p-6">
