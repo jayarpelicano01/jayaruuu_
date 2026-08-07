@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { projects, getProject } from "@/data/projects";
 import Reveal from "@/components/ui/reveal";
 import ArrowLink from "@/components/ui/arrow-link";
+import ProjectGallery from "@/components/projects/project-gallery";
 import { site } from "@/data/site";
 
 type Props = {
@@ -130,22 +131,7 @@ export default async function CaseStudyPage({ params }: Props) {
       {project.gallery.length > 0 ? (
         <div className="mx-auto mt-14 max-w-content px-5 sm:px-8">
           <Reveal>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {project.gallery.map((shot, i) => (
-                <figure key={shot.image}>
-                  <div className="relative aspect-[16/10] overflow-hidden border border-line">
-                    <Image
-                      src={shot.image}
-                      alt={shot.alt}
-                      fill
-                      loading={i === 0 ? "eager" : "lazy"}
-                      sizes="(min-width: 1152px) 24rem, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </figure>
-              ))}
-            </div>
+            <ProjectGallery items={project.gallery} />
           </Reveal>
         </div>
       ) : null}
