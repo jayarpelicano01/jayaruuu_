@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { experience, education, honors } from "@/data/experience";
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/ui/reveal";
@@ -13,32 +17,7 @@ export default function Experience() {
         <div className="lg:flex-1">
           {experience.map((item, i) => (
             <Reveal key={item.title} delay={0.05 * i}>
-              <article className="border-b border-line py-8 first:pt-0">
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <span className="font-mono text-xs uppercase tracking-widest text-muted">
-                    {item.year}
-                  </span>
-                  <span className="font-mono text-xs uppercase tracking-widest text-muted/70">
-                    {item.kind}
-                  </span>
-                </div>
-                <h3 className="mt-2 text-2xl font-medium tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="mt-1 text-sm text-muted">
-                  {item.org} · {item.role}
-                </p>
-                <ul className="mt-4 space-y-2 text-md text-ink/80">
-                  {item.points.map((point) => (
-                    <li key={point} className="flex gap-3">
-                      <span aria-hidden className="font-mono text-xs text-muted">
-                        ·
-                      </span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
+              <ExperienceRow item={item} />
             </Reveal>
           ))}
         </div>
@@ -79,5 +58,57 @@ export default function Experience() {
         </aside>
       </div>
     </section>
+  );
+}
+
+function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <article
+      className="border-b border-line py-6 first:pt-0"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <h3 className="text-2xl font-medium tracking-tight sm:text-3xl">
+          {item.title}
+        </h3>
+        <span className="font-mono text-xs uppercase tracking-widest text-muted">
+          {item.year}
+        </span>
+      </div>
+
+      <motion.div
+        initial={false}
+        animate={{ height: hovered ? "auto" : 0, opacity: hovered ? 1 : 0 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
+        className="overflow-hidden"
+      >
+        <div className="pt-4">
+          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <span className="font-mono text-xs uppercase tracking-widest text-muted/70">
+              {item.kind}
+            </span>
+            {item.org ? (
+              <span className="font-mono text-xs uppercase tracking-widest text-muted/70">
+                {item.org}
+              </span>
+            ) : null}
+            <span className="text-sm text-muted">{item.role}</span>
+          </div>
+          <ul className="mt-4 space-y-2 text-md text-ink/80">
+            {item.points.map((point) => (
+              <li key={point} className="flex gap-3">
+                <span aria-hidden className="font-mono text-xs text-muted">
+                  ·
+                </span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+    </article>
   );
 }
