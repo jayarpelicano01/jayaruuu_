@@ -34,9 +34,9 @@ function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
-        <h3 className="text-4xl font-medium tracking-tight sm:text-5xl">
-          {item.title}
-        </h3>
+<h3 className="text-5xl font-medium tracking-tight sm:text-6xl lg:text-7xl">
+        {item.title}
+      </h3>
         <span className="font-mono text-base uppercase tracking-widest text-muted">
           {item.year}
         </span>
@@ -45,7 +45,7 @@ function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
       <motion.div
         initial={false}
         animate={{ height: hovered ? "auto" : 0, opacity: hovered ? 1 : 0 }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
+        transition={{ duration: 0.6, ease: "easeInOut" as const }}
         className="overflow-hidden"
       >
         <div className="pt-6">
