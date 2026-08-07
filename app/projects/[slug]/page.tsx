@@ -127,6 +127,29 @@ export default async function CaseStudyPage({ params }: Props) {
         </Reveal>
       </div>
 
+      {project.gallery.length > 0 ? (
+        <div className="mx-auto mt-14 max-w-content px-5 sm:px-8">
+          <Reveal>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {project.gallery.map((shot, i) => (
+                <figure key={shot.image}>
+                  <div className="relative aspect-[16/10] overflow-hidden border border-line">
+                    <Image
+                      src={shot.image}
+                      alt={shot.alt}
+                      fill
+                      loading={i === 0 ? "eager" : "lazy"}
+                      sizes="(min-width: 1152px) 24rem, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </figure>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      ) : null}
+
       <div className="mx-auto mt-16 max-w-content px-5 sm:px-8">
         <section className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -207,34 +230,11 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </CaseSection>
 
-      <CaseSection number="08" title="Screenshots">
-        <div className="mt-6 grid gap-8">
-          {cs.screenshots.map((shot) => (
-            <Reveal key={shot.caption}>
-              <figure>
-                <div className="relative aspect-[16/9] overflow-hidden border border-line">
-                  <Image
-                    src={shot.image}
-                    alt={shot.alt}
-                    fill
-                    sizes="(min-width: 1152px) 72rem, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="mt-3 font-mono text-xs uppercase tracking-widest text-muted">
-                  {shot.caption}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </CaseSection>
-
-      <CaseSection number="09" title="Outcome">
+      <CaseSection number="08" title="Outcome">
         <List items={cs.outcome} />
       </CaseSection>
 
-      <CaseSection number="10" title="Links">
+      <CaseSection number="09" title="Links">
         <div className="mt-6 flex flex-wrap gap-x-10 gap-y-4">
           {project.liveDemo ? (
             <ArrowLink href={project.liveDemo}>

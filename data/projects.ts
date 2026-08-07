@@ -15,6 +15,7 @@ export type Project = {
   source?: string
   status: "Live" | "LAN" | "Archived" | "This Site"
   highlights: string[]
+  gallery: { image: string; alt: string }[]
   caseStudy: {
     overview: string
     problem: string[]
@@ -24,7 +25,6 @@ export type Project = {
     architecture: string[]
     challenges: { title: string; detail: string }[]
     outcome: string[]
-    screenshots: { image: string; alt: string; caption: string }[]
   }
 }
 
@@ -46,6 +46,18 @@ export const projects: Project[] = [
     source: "https://github.com/jayarpelicano01",
     status: "Live",
     highlights: ["Full-stack system", "Automated workflows", "Accomplishment reports"],
+    gallery: [
+      { image: "/images/projects/gallery/gsusystem/landingpage1.png", alt: "GSU System landing page" },
+      { image: "/images/projects/gallery/gsusystem/landingpage2.png", alt: "GSU System landing page variant" },
+      { image: "/images/projects/gallery/gsusystem/landingpage3.png", alt: "GSU System landing page variant" },
+      { image: "/images/projects/gallery/gsusystem/loginpage.png", alt: "GSU System login page" },
+      { image: "/images/projects/gallery/gsusystem/dashboard.png", alt: "GSU System dashboard" },
+      { image: "/images/projects/gallery/gsusystem/jobrequestsection.png", alt: "GSU System job request section" },
+      { image: "/images/projects/gallery/gsusystem/accomplishmentreport.png", alt: "GSU System accomplishment report" },
+      { image: "/images/projects/gallery/gsusystem/pr-ris-print.png", alt: "GSU System PR and RIS print view" },
+      { image: "/images/projects/gallery/gsusystem/inspectionprint.png", alt: "GSU System inspection print view" },
+      { image: "/images/projects/gallery/gsusystem/lightmode.png", alt: "GSU System light mode" },
+    ],
     caseStudy: {
       overview:
         "GSU System is a full-stack job request and ordering system developed during my OJT internship at the University of the Eastern Philippines' General Services Unit and ICT Department. It digitizes manual clerical workflows for job requests, procurement, and accomplishment reporting.",
@@ -100,13 +112,6 @@ export const projects: Project[] = [
         "Automated clerical workflows and improved operational efficiency.",
         "Reduced manual tracking errors by approximately 40%.",
       ],
-      screenshots: [
-        {
-          image: "/images/projects/gsu.png",
-          alt: "GSU System dashboard",
-          caption: "The dashboard where staff manage job requests and reports.",
-        },
-      ],
     },
   },
   {
@@ -126,6 +131,14 @@ export const projects: Project[] = [
     source: "https://github.com/jayarpelicano01",
     status: "LAN",
     highlights: ["Voter anonymity", "Real-time tallying", "Database design"],
+    gallery: [
+      { image: "/images/projects/gallery/campuschoice/landingpage.png", alt: "CampusChoice landing page" },
+      { image: "/images/projects/gallery/campuschoice/loginpage.png", alt: "CampusChoice login page" },
+      { image: "/images/projects/gallery/campuschoice/dashboard.png", alt: "CampusChoice dashboard" },
+      { image: "/images/projects/gallery/campuschoice/candidatelist.png", alt: "CampusChoice candidate list" },
+      { image: "/images/projects/gallery/campuschoice/electionconfig.png", alt: "CampusChoice election configuration" },
+      { image: "/images/projects/gallery/campuschoice/resultspage.png", alt: "CampusChoice results page" },
+    ],
     caseStudy: {
       overview:
         "CampusChoice is a secure, full-stack electronic voting platform for the University of the Eastern Philippines' student elections. It enforces strict voter anonymity and reliable, real-time result tallying during high-traffic election periods.",
@@ -179,13 +192,6 @@ export const projects: Project[] = [
         "Preserved voter anonymity and real-time tallying under load.",
         "Showed rigorous database and security thinking.",
       ],
-      screenshots: [
-        {
-          image: "/images/projects/campuschoice.png",
-          alt: "CampusChoice electronic voting interface",
-          caption: "The voting interface used by students during elections.",
-        },
-      ],
     },
   },
   {
@@ -204,6 +210,12 @@ export const projects: Project[] = [
     source: "https://github.com/jayarpelicano01",
     status: "Live",
     highlights: ["API development", "Document workflows", "Database architecture"],
+    gallery: [
+      { image: "/images/projects/gallery/urds/landingpage.png", alt: "URDS landing page" },
+      { image: "/images/projects/gallery/urds/loginpage.png", alt: "URDS login page" },
+      { image: "/images/projects/gallery/urds/dashboard.png", alt: "URDS dashboard" },
+      { image: "/images/projects/gallery/urds/about.png", alt: "URDS about page" },
+    ],
     caseStudy: {
       overview:
         "URDS is a full-stack university records and documents system built with Node.js, Express.js, and MySQL. It manages records and document workflows through a clean REST API.",
@@ -248,13 +260,6 @@ export const projects: Project[] = [
         "Demonstrated strong API design and database modeling.",
         "Deployed a public demo for review.",
       ],
-      screenshots: [
-        {
-          image: "/images/projects/urds.png",
-          alt: "URDS records interface",
-          caption: "The records and document management interface.",
-        },
-      ],
     },
   },
   {
@@ -275,6 +280,17 @@ export const projects: Project[] = [
     source: "https://github.com/jayarpelicano01",
     status: "Archived",
     highlights: ["IoT + Arduino", "Sensor integration", "Automated irrigation"],
+    gallery: [
+      { image: "/images/projects/gallery/smartfarming/dashboard-smartfarming.png", alt: "Smart Farming dashboard" },
+      { image: "/images/projects/gallery/smartfarming/dashboard-smartfarming2.png", alt: "Smart Farming dashboard variant" },
+      { image: "/images/projects/gallery/smartfarming/dashboard-smartfarming3.png", alt: "Smart Farming dashboard variant" },
+      { image: "/images/projects/gallery/smartfarming/dashboard-smartfarming-nightmode.png", alt: "Smart Farming dashboard in night mode" },
+      { image: "/images/projects/gallery/smartfarming/charts-smartfarming.png", alt: "Smart Farming analytics charts" },
+      { image: "/images/projects/gallery/smartfarming/records-smartfarming.png", alt: "Smart Farming records" },
+      { image: "/images/projects/gallery/smartfarming/userrecords-smartfarming.png", alt: "Smart Farming user records" },
+      { image: "/images/projects/gallery/smartfarming/champion-picture.jpg", alt: "Team with Smart Farming at the Arduino challenge" },
+      { image: "/images/projects/gallery/smartfarming/champion-picture2.jpg", alt: "Smart Farming champion award photo" },
+    ],
     caseStudy: {
       overview:
         "SmartFarming is an IoT agricultural system that monitors soil nutrition and moisture and automates irrigation. I developed the full-stack web layer and sensor telemetry pipeline, and it won the UEP 2nd Arduino Innovator Challenge in 2025.",
@@ -330,13 +346,6 @@ export const projects: Project[] = [
         "Won the UEP 2nd Arduino Innovator Challenge (2025).",
         "Proved full-stack development plus hardware and sensor integration.",
       ],
-      screenshots: [
-        {
-          image: "/images/projects/smart-farming.png",
-          alt: "Smart Farming monitoring dashboard",
-          caption: "The dashboard monitoring soil analytics and irrigation controls.",
-        },
-      ],
     },
   },
   {
@@ -355,6 +364,12 @@ export const projects: Project[] = [
     source: "https://github.com/jayarpelicano01",
     status: "This Site",
     highlights: ["Modern stack", "Editorial design", "Responsive + accessible"],
+    gallery: [
+      { image: "/images/projects/gallery/portfolio/portfolio1.png", alt: "Portfolio homepage" },
+      { image: "/images/projects/gallery/portfolio/portfolio2.png", alt: "Portfolio project section" },
+      { image: "/images/projects/gallery/portfolio/portfolio3.png", alt: "Portfolio case study page" },
+      { image: "/images/projects/gallery/portfolio/lightmode.png", alt: "Portfolio in light mode" },
+    ],
     caseStudy: {
       overview:
         "This portfolio is itself a portfolio project: an editorial, monochrome developer website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. It presents my projects as case studies, and it proves my frontend capabilities.",
@@ -405,13 +420,6 @@ export const projects: Project[] = [
         "Delivered a polished, deploy-ready developer portfolio.",
         "Demonstrates modern frontend development end-to-end.",
         "Serves as a living portfolio project for Next.js and design skills.",
-      ],
-      screenshots: [
-        {
-          image: "/images/projects/portfolio.png",
-          alt: "This portfolio homepage",
-          caption: "The homepage of this portfolio.",
-        },
       ],
     },
   },
