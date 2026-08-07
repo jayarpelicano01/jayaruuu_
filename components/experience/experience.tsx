@@ -10,7 +10,7 @@ export default function Experience() {
   return (
     <section id="experience" className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
       <Reveal>
-        <SectionHeading index="03" title="Experience" meta="Hover to expand" />
+        <SectionHeading index="04" title="Experience" meta="Click or hover to expand" />
       </Reveal>
 
       <div className="mt-8">
@@ -26,17 +26,20 @@ export default function Experience() {
 
 function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
   const [hovered, setHovered] = useState(false);
+  const [open, setOpen] = useState(false);
+  const expanded = open || hovered;
 
   return (
     <article
-      className="border-b border-line py-10 first:pt-0"
+      className="cursor-pointer border-b border-line py-10 first:pt-0"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => setOpen((v) => !v)}
     >
       <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
-<h3 className="text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
-        {item.title}
-      </h3>
+        <h3 className="text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+          {item.title}
+        </h3>
         <span className="font-mono text-base uppercase tracking-widest text-muted">
           {item.year}
         </span>
@@ -44,7 +47,7 @@ function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
 
       <motion.div
         initial={false}
-        animate={{ height: hovered ? "auto" : 0, opacity: hovered ? 1 : 0 }}
+        animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
         transition={{ duration: 0.6, ease: "easeInOut" as const }}
         className="overflow-hidden"
       >

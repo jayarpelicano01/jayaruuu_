@@ -10,7 +10,7 @@ export default function SelectedWork() {
     <section id="work" className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
       <Reveal>
         <SectionHeading
-          index="01"
+          index="03"
           title="Selected Work"
           meta={`${String(projects.length).padStart(2, "0")} Projects`}
         />

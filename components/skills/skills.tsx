@@ -33,7 +33,7 @@ export default function Skills() {
     <section id="skills" className="border-t border-line bg-paper">
       <div className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
         <Reveal>
-          <SectionHeading index="05" title="Tech Stack" meta="Proven by projects" />
+          <SectionHeading index="02" title="Tech Stack" meta="Proven by projects" />
         </Reveal>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -43,7 +43,7 @@ export default function Skills() {
                 <h3 className="font-mono text-xs uppercase tracking-widest text-muted">
                   {String(ci + 1).padStart(2, "0")} · {category.name}
                 </h3>
-                <div className="mt-4 space-y-2">
+                <div className="mt-5 space-y-4">
                   {category.skills.map((skill) => {
                     const Icon = iconMap[skill.icon];
                     return (
@@ -52,16 +52,9 @@ export default function Skills() {
                         className="flex items-center gap-3"
                       >
                         {Icon ? <Icon className="h-5 w-5 text-ink" /> : null}
-                        <div>
-                          <p className="text-sm font-medium tracking-tight">
-                            {skill.name}
-                          </p>
-                          {skill.note ? (
-                            <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
-                              {skill.note}
-                            </p>
-                          ) : null}
-                        </div>
+                        <p className="text-sm font-medium tracking-tight">
+                          {skill.name}
+                        </p>
                       </div>
                     );
                   })}

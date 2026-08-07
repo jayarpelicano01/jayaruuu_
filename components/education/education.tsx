@@ -7,7 +7,7 @@ export default function Education() {
     <section id="education" className="border-t border-line bg-paper">
       <div className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
         <Reveal>
-          <SectionHeading index="04" title="Education & Honors" />
+          <SectionHeading index="05" title="Education & Honors" />
         </Reveal>
 
         <div className="mx-auto mt-10 max-w-3xl">

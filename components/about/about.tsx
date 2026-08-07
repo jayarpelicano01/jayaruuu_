@@ -30,7 +30,7 @@ export default function About() {
     <section id="about" className="border-t border-line bg-paper">
       <div className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
         <Reveal>
-          <SectionHeading index="02" title="About" />
+          <SectionHeading index="01" title="About" />
         </Reveal>
 
         <Reveal delay={0.1}>
