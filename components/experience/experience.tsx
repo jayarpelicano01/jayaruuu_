@@ -34,7 +34,7 @@ function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
-<h3 className="text-5xl font-medium tracking-tight sm:text-6xl lg:text-7xl">
+<h3 className="text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
         {item.title}
       </h3>
         <span className="font-mono text-base uppercase tracking-widest text-muted">
