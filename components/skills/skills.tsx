@@ -1,9 +1,32 @@
+import type { IconType } from "react-icons";
+import { SiHtml5, SiCss, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiExpress, SiOpenjdk, SiSpringboot, SiMysql, SiGit, SiGithub, SiVercel, SiRender, SiPostman, SiArduino } from "react-icons/si";
 import { skills } from "@/data/skills";
 import { projects } from "@/data/projects";
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/ui/reveal";
 import ArrowLink from "@/components/ui/arrow-link";
 import { site } from "@/data/site";
+
+const iconMap: Record<string, IconType> = {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiOpenjdk,
+  SiSpringboot,
+  SiMysql,
+  SiGit,
+  SiGithub,
+  SiVercel,
+  SiRender,
+  SiPostman,
+  SiArduino,
+};
 
 export default function Skills() {
   return (
@@ -13,22 +36,35 @@ export default function Skills() {
           <SectionHeading index="05" title="Tech Stack" meta="Proven by projects" />
         </Reveal>
 
-        <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {skills.map((category, i) => (
-            <Reveal key={category.name} delay={0.05 * i}>
-              <div className="border border-line p-6">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {skills.map((category, ci) => (
+            <Reveal key={category.name} delay={0.05 * ci}>
+              <div className="h-full border border-line p-6">
                 <h3 className="font-mono text-xs uppercase tracking-widest text-muted">
-                  {String(i + 1).padStart(2, "0")} · {category.name}
+                  {String(ci + 1).padStart(2, "0")} · {category.name}
                 </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill.name}
-                      className="inline-flex items-center gap-2 border border-line px-3 py-1.5 text-sm"
-                    >
-                      {skill.name}
-                    </span>
-                  ))}
+                <div className="mt-4 space-y-2">
+                  {category.skills.map((skill) => {
+                    const Icon = iconMap[skill.icon];
+                    return (
+                      <div
+                        key={skill.name}
+                        className="flex items-center gap-3"
+                      >
+                        {Icon ? <Icon className="h-5 w-5 text-ink" /> : null}
+                        <div>
+                          <p className="text-sm font-medium tracking-tight">
+                            {skill.name}
+                          </p>
+                          {skill.note ? (
+                            <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
+                              {skill.note}
+                            </p>
+                          ) : null}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </Reveal>
@@ -36,7 +72,7 @@ export default function Skills() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-12 border border-line">
+          <div className="mt-10 border border-line">
             <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-line px-6 py-5 sm:px-8">
               <h3 className="font-mono text-xs uppercase tracking-widest text-muted">
                 Evidence
@@ -46,18 +82,23 @@ export default function Skills() {
                 the stack, not just listing it.
               </p>
             </div>
-            <div className="grid divide-y divide-line lg:grid-cols-5 lg:divide-x lg:divide-y-0">
+            <div className="divide-y divide-line">
               {projects.map((project) => (
-                <div key={project.slug} className="px-6 py-5 sm:px-8 lg:px-5">
+                <div
+                  key={project.slug}
+                  className="grid grid-cols-[auto_1fr] items-center gap-4 px-6 py-5 sm:px-8"
+                >
                   <span className="font-mono text-xs text-muted">
                     {project.number}
                   </span>
-                  <p className="mt-2 text-base font-medium tracking-tight">
-                    {project.title}
-                  </p>
-                  <p className="mt-1 font-mono text-[11px] uppercase tracking-widest text-muted">
-                    {project.stack.join(" · ")}
-                  </p>
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                    <p className="text-lg font-medium tracking-tight">
+                      {project.title}
+                    </p>
+                    <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
+                      {project.stack.join(" · ")}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
