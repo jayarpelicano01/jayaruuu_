@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden border-b border-line">
-      <div className="mx-auto grid max-w-content gap-10 px-5 pt-32 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:pt-40">
+      <div className="mx-auto grid max-w-content gap-10 px-5 pt-32 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:items-center lg:gap-16 lg:pt-40">
         <div className="pb-4">
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -92,16 +92,16 @@ export default function Hero() {
           initial={reduce ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
-          className="relative mx-auto w-full max-w-xs sm:max-w-sm"
+          className="relative mx-auto w-full max-w-[16rem] sm:max-w-[18rem] lg:max-w-[22rem]"
         >
-          <div className="relative aspect-[4/5] overflow-hidden border border-line">
+          <div className="relative aspect-[3/4] overflow-hidden border border-line">
             <Image
               src="/images/profile/portrait.jpg"
               alt={`Professional portrait of ${site.name}`}
               fill
               priority
-              sizes="(min-width: 1024px) 24rem, 20rem"
-              className="object-cover"
+              sizes="(min-width: 1024px) 22rem, 18rem"
+              className="object-cover object-top"
             />
           </div>
         </motion.div>
