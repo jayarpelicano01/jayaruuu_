@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import { SiHtml5, SiCss, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiExpress, SiOpenjdk, SiSpringboot, SiMysql, SiGit, SiGithub, SiVercel, SiRender, SiPostman, SiArduino } from "react-icons/si";
+import { SiHtml5, SiCss, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiExpress, SiOpenjdk, SiSpringboot, SiMysql, SiGit, SiGithub, SiVercel, SiRender, SiPostman } from "react-icons/si";
 import { skills } from "@/data/skills";
 import { projects } from "@/data/projects";
 import SectionHeading from "@/components/ui/section-heading";
@@ -25,7 +25,6 @@ const iconMap: Record<string, IconType> = {
   SiVercel,
   SiRender,
   SiPostman,
-  SiArduino,
 };
 
 export default function Skills() {

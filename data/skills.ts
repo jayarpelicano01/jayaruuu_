@@ -40,7 +40,6 @@ export const skills: SkillCategory[] = [
       { name: "Vercel", icon: "SiVercel" },
       { name: "Render", icon: "SiRender" },
       { name: "Postman", icon: "SiPostman" },
-      { name: "Arduino IDE", icon: "SiArduino" },
     ],
   },
 ]
