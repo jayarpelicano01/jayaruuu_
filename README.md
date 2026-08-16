@@ -8,7 +8,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8)](https://tailwindcss.com)
-[![License](https://img.shields.io/badge/license-All%20rights%20reserved-lightgrey)]()
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 </div>
 
@@ -136,4 +136,4 @@ The contact form sends messages to `jayarpelicano01@gmail.com` via [Resend](http
 
 ## License
 
-All rights reserved. Source code is shared for reference and portfolio purposes; it is not licensed for reuse. Add a `LICENSE` file if you intend to open it up.
+Released under the [MIT License](LICENSE). See [LICENSE](LICENSE) for details.
