@@ -1,6 +1,16 @@
-# Jay Ar Pelicano | Portfolio
+<div align="center">
 
-The professional developer portfolio of **Agustin Ronato Pelicano Jr.** (Jay Ar), a junior software developer and full-stack developer.
+# Jay Ar Pelicano · Portfolio
+
+> A junior full-stack developer's portfolio — built so a recruiter understands what I can ship in under a minute.
+
+[![Live Demo](https://img.shields.io/badge/live-jayaruuu.vercel.app-FFD700)](https://jayaruuu.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8)](https://tailwindcss.com)
+[![License](https://img.shields.io/badge/license-All%20rights%20reserved-lightgrey)]()
+
+</div>
 
 ## Purpose
 
@@ -9,15 +19,6 @@ A portfolio designed around one question:
 > How can a recruiter understand my ability in less than a minute?
 
 It presents Jay Ar as a junior developer who can actually build complete software systems, through strong project case studies rather than generic skill claims.
-
-## Tech Stack
-
-- **Next.js** (App Router) · 16
-- **TypeScript**
-- **Tailwind CSS** · v4
-- **Framer Motion** · animations
-- **Lucide React** · icons
-- **next/font** · Space Grotesk + JetBrains Mono
 
 ## Features
 
@@ -29,6 +30,22 @@ It presents Jay Ar as a junior developer who can actually build complete softwar
 - SEO: metadata, Open Graph image, sitemap, robots
 - Custom cursor (disabled on touch / reduced-motion)
 - Accessible semantics and keyboard navigation
+
+## Screenshot
+
+![Portfolio homepage](public/images/projects/portfolio.png)
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript 5 |
+| Styling | Tailwind CSS v4 |
+| Animation | Framer Motion · GSAP |
+| Icons | Lucide React · React Icons |
+| Email | Resend |
+| Fonts | `next/font` — Space Grotesk + JetBrains Mono |
 
 ## Project Structure
 
@@ -82,7 +99,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deployment
 
-Deploy on **Vercel**:
+Deployed on **Vercel** at [jayaruuu.vercel.app](https://jayaruuu.vercel.app).
 
 1. Push this repository to GitHub.
 2. Import the repo in [Vercel](https://vercel.com).
@@ -107,3 +124,16 @@ The contact form sends messages to `jayarpelicano01@gmail.com` via [Resend](http
 - All portfolio, project, and experience content lives in `data/` and is driven from `data/projects.ts`.
 - Replace placeholder project images in `public/images/projects/` with final screenshots.
 - Update contact details in `data/site.ts`.
+
+## Author
+
+**Agustin Ronato Pelicano Jr. (Jay Ar)** — Junior & Full-Stack Software Developer
+
+- 🌐 Portfolio: [jayaruuu.vercel.app](https://jayaruuu.vercel.app)
+- 💻 GitHub: [@jayarpelicano01](https://github.com/jayarpelicano01)
+- 💼 LinkedIn: [agustin-pelicano-jr-77062a3a6](https://www.linkedin.com/in/agustin-pelicano-jr-77062a3a6/)
+- ✉️ Email: [jayarpelicano01@gmail.com](mailto:jayarpelicano01@gmail.com)
+
+## License
+
+All rights reserved. Source code is shared for reference and portfolio purposes; it is not licensed for reuse. Add a `LICENSE` file if you intend to open it up.
