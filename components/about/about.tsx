@@ -1,6 +1,5 @@
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/ui/reveal";
-import { site } from "@/data/site";
 
 const skills = [
   {
@@ -30,18 +29,18 @@ export default function About() {
     <section id="about" className="border-t border-line bg-paper">
       <div className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
         <Reveal>
-          <SectionHeading index="01" title="About" />
+          <SectionHeading index="05" title="About" />
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="mt-8 max-w-3xl text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
+          <p className="mt-8 text-2xl font-medium leading-snug tracking-tight sm:text-3xl lg:text-4xl">
             I&apos;m Jay Ar, a junior software developer who enjoys turning
             ideas into functional, well-designed digital products.
           </p>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <p className="mt-6 max-w-2xl text-lg text-muted">
+          <p className="mt-6 text-lg text-muted lg:text-2xl">
             I focus on full-stack development, understanding both the
             frontend and the backend so I can build complete systems from idea
             to deployment. I care about clean architecture, data integrity,
@@ -50,7 +49,7 @@ export default function About() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <p className="mt-6 max-w-2xl text-lg text-muted">
+          <p className="mt-6 text-lg text-muted lg:text-2xl">
             My background includes an OJT internship with the General Services
             Unit and ICT Department of the University of the Eastern
             Philippines, where I shipped a production job request system, plus
@@ -67,22 +66,16 @@ export default function About() {
                 <span className="font-mono text-xs uppercase tracking-widest text-muted transition-colors duration-300 group-hover:text-ink">
                   {String(i + 1).padStart(2, "0")} · Skill
                 </span>
-                <h3 className="mt-3 text-lg font-medium tracking-tight">
+                <h3 className="mt-3 text-xl font-medium tracking-tight">
                   {skill.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
+                <p className="mt-2 text-base leading-relaxed text-muted sm:text-lg">
                   {skill.description}
                 </p>
               </div>
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={0.2}>
-          <p className="mt-10 font-mono text-xs uppercase tracking-widest text-muted">
-            {site.fullName} · {site.city} · {site.email}
-          </p>
-        </Reveal>
       </div>
     </section>
   );

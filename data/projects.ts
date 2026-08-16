@@ -4,6 +4,8 @@ export type Project = {
   title: string
   category: string
   description: string
+  shortDescription?: string
+  highlight?: boolean
   role: string
   year: string
   stack: string[]
@@ -32,10 +34,13 @@ export const projects: Project[] = [
   {
     slug: "gsu-system",
     number: "01",
-    title: "GSU System",
+    title: "GSU Job Request and Job Ordering System",
     category: "University Management Platform",
     description:
       "A full-stack job request and ordering system for the university's General Services Unit.",
+    shortDescription:
+      "Digitized the university's General Services Unit workflows — from job requests and purchase requisitions to automatic accomplishment reports.",
+    highlight: true,
     role: "Full-Stack Developer",
     year: "2026",
     stack: ["Next.js", "TypeScript", "Node.js", "Express.js", "MySQL"],
@@ -115,9 +120,94 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "campuschoice",
+    slug: "faura-farmer",
     number: "02",
-    title: "CampusChoice",
+    title: "Faura-Farmer: Personal Finance Tracker",
+    category: "Personal Finance Tracker",
+    description:
+      "A full-stack personal finance tracker with multi-user accounts, Auth.js v5 authentication, and interactive analytics dashboards.",
+    shortDescription:
+      "A full-stack personal finance management app with multi-user data isolation, Auth.js v5 login, and Recharts-powered dashboards.",
+    role: "Full-Stack Developer",
+    year: "2026",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Auth.js"],
+    image: "/images/projects/faura-farmer.png",
+    imageAlt: "Faura-Farmer finance dashboard",
+    liveDemo: "https://faura-farmer.vercel.app",
+    liveDemoLabel: "Live Demo",
+    source: "https://github.com/jayarpelicano01",
+    status: "Live",
+    highlights: ["Multi-user isolation", "Auth.js v5 OAuth", "Recharts dashboards"],
+    gallery: [
+      { image: "/images/projects/gallery/faura-farmer/login%20page.png", alt: "Faura-Farmer login page" },
+      { image: "/images/projects/gallery/faura-farmer/dashboard.png", alt: "Faura-Farmer dashboard" },
+      { image: "/images/projects/gallery/faura-farmer/transaction%20page.png", alt: "Faura-Farmer transaction page" },
+      { image: "/images/projects/gallery/faura-farmer/reports%20page.png", alt: "Faura-Farmer reports page" },
+      { image: "/images/projects/gallery/faura-farmer/Faura%20dark%20mode.png", alt: "Faura-Farmer dark mode" },
+    ],
+    caseStudy: {
+      overview:
+        "Faura-Farmer is a full-stack personal finance management web application that helps users take control of their money through manual income and expense tracking. Built with Next.js 15, React 19, TypeScript, Tailwind CSS, and shadcn/ui on the frontend, and Prisma ORM with PostgreSQL on the backend, the system supports multi-user accounts with complete data isolation — each user only sees their own finances.",
+      problem: [
+        "Tracking money manually leaves people blind to where it actually goes.",
+        "Finance apps rarely offer true data isolation between multiple users.",
+        "Understanding spending patterns requires dashboards and analytics, not just transaction lists.",
+      ],
+      solution: [
+        "I built a full-stack finance tracker where each user has complete, isolated control over their own finances.",
+        "Auth.js v5 handles email/password login plus Google and Facebook OAuth, using JWT sessions for future mobile compatibility.",
+        "Interactive Recharts dashboards surface balance summaries, income vs. expense breakdowns, monthly spending trends, and spending-by-category analytics.",
+      ],
+      role: [
+        "I designed and built the entire full-stack application, from schema to interface.",
+        "I modeled users, accounts, transactions, and hierarchical categories in PostgreSQL with Prisma.",
+        "I engineered the Recharts dashboards and the search and filter capabilities across transactions.",
+      ],
+      features: [
+        "Multi-user accounts with complete data isolation",
+        "Auth.js v5 with email/password, Google, and Facebook OAuth",
+        "JWT sessions for future mobile compatibility",
+        "Customizable financial accounts (banks, e-wallets, cash, credit cards, investments)",
+        "Transactions with hierarchical categories",
+        "Interactive Recharts dashboards",
+        "Full search and filter across transactions",
+      ],
+      architecture: [
+        "Frontend (Next.js 15 + React 19 + Tailwind + shadcn/ui)",
+        "Authentication (Auth.js v5 / JWT sessions)",
+        "Next.js API routes",
+        "Prisma ORM",
+        "PostgreSQL Database",
+        "Vercel Deployment",
+      ],
+      challenges: [
+        {
+          title: "Enforcing data isolation",
+          detail:
+            "I scoped every query to the authenticated user so accounts, transactions, and categories are never shared between users.",
+        },
+        {
+          title: "Wiring multi-provider auth",
+          detail:
+            "I integrated Auth.js v5 with email/password, Google, and Facebook OAuth while keeping JWT sessions ready for a future React Native app.",
+        },
+        {
+          title: "Designing the dashboards",
+          detail:
+            "I structured the aggregation logic that powers Recharts so balances, income vs. expenses, monthly trends, and category breakdowns render quickly.",
+        },
+      ],
+      outcome: [
+        "Shipped a Phase 1 MVP deployed on Vercel with continuous deployment from GitHub.",
+        "Proved an architecture designed to scale into automatic bank sync, a React Native mobile app with offline support, and multi-currency features.",
+        "Demonstrated a modern Next.js 15 + Prisma + PostgreSQL full-stack workflow.",
+      ],
+    },
+  },
+  {
+    slug: "campuschoice",
+    number: "03",
+    title: "CampusChoice: An Electronic Voting System for the University of Eastern Philippines",
     category: "Electronic Voting System",
     description:
       "A secure electronic voting system for the University of the Eastern Philippines.",
@@ -196,7 +286,7 @@ export const projects: Project[] = [
   },
   {
     slug: "urds-system",
-    number: "03",
+    number: "04",
     title: "URDS",
     category: "University Records & Documents System",
     description: "A full-stack university records and documents system.",
@@ -264,8 +354,8 @@ export const projects: Project[] = [
   },
   {
     slug: "smart-farming",
-    number: "04",
-    title: "Smart Farming",
+    number: "05",
+    title: "SmartFarming: Automatic Soil Irrigation and Fertilization",
     category: "IoT Agricultural Monitoring System",
     description:
       "Soil nutrient monitoring and automatic irrigation using Arduino.",
@@ -350,7 +440,7 @@ export const projects: Project[] = [
   },
   {
     slug: "portfolio",
-    number: "05",
+    number: "06",
     title: "jayaruuu_",
     category: "Developer Portfolio Website",
     description:

@@ -13,18 +13,18 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-svh flex-col justify-center overflow-hidden border-b border-line"
     >
-      <div className="mx-auto grid w-full max-w-content gap-10 px-5 py-32 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-center lg:gap-16 lg:py-40">
-        <div className="pb-4">
+      <div className="mx-auto grid w-full max-w-content gap-10 px-5 py-32 sm:px-8 lg:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-center lg:gap-16 lg:py-40">
+        <div className="pb-8">
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
-            className="font-mono text-xs uppercase tracking-widest text-muted"
+            className="font-mono text-sm uppercase tracking-widest text-muted sm:text-base"
           >
             Junior Software Developer · Philippines
           </motion.p>
 
-          <h1 className="mt-6 text-[15vw] font-bold leading-[0.9] tracking-tight sm:text-6xl lg:whitespace-nowrap lg:text-[4.5rem] xl:text-[5rem]">
+          <h1 className="mt-6 text-[18vw] font-bold leading-[0.9] tracking-tight sm:text-8xl lg:whitespace-nowrap lg:text-[7rem] xl:text-[8rem]">
             <motion.span
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-10 font-mono text-lg uppercase tracking-widest text-muted sm:text-xl lg:whitespace-nowrap"
+            className="mt-10 font-mono text-xl uppercase tracking-widest text-muted sm:text-2xl lg:whitespace-nowrap"
           >
             Full-Stack Developer
           </motion.p>
@@ -56,7 +56,7 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-10 max-w-xl text-lg leading-relaxed text-muted"
+            className="mt-10 max-w-xxl text-xl leading-relaxed text-muted sm:text-2xl"
           >
             {site.tagline}
           </motion.p>

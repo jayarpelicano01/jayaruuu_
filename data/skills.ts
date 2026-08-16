@@ -29,6 +29,8 @@ export const skills: SkillCategory[] = [
     name: "Database",
     skills: [
       { name: "MySQL", icon: "SiMysql" },
+      { name: "PostgreSQL", icon: "SiPostgresql" },
+      { name: "Supabase", icon: "SiSupabase" },
       { name: "SQL", icon: "SiMysql" },
     ],
   },
@@ -40,6 +42,16 @@ export const skills: SkillCategory[] = [
       { name: "Vercel", icon: "SiVercel" },
       { name: "Render", icon: "SiRender" },
       { name: "Postman", icon: "SiPostman" },
+    ],
+  },
+  {
+    name: "AI Tools & Agents",
+    skills: [
+      { name: "OpenCode CLI", icon: "TbTerminal2" },
+      { name: "Hermes Agent", icon: "TbAiAgent" },
+      { name: "ChatGPT", icon: "TbBrandOpenai" },
+      { name: "Claude", icon: "SiClaude" },
+      { name: "Gemini", icon: "SiGooglegemini" },
     ],
   },
 ]

@@ -23,7 +23,7 @@ It presents Jay Ar as a junior developer who can actually build complete softwar
 
 - Editorial, black-and-white (Swiss-style) design system
 - Data-driven project list with case studies
-- Five projects: GSU System, CampusChoice, URDS, Smart Farming, This Portfolio
+- Six projects: GSU System, Faura-Farmer, CampusChoice, URDS, Smart Farming, This Portfolio
 - Responsive, mobile-first layout
 - Restrained animations with `prefers-reduced-motion` support
 - SEO: metadata, Open Graph image, sitemap, robots

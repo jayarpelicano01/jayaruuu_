@@ -7,7 +7,7 @@ import Reveal from "@/components/ui/reveal";
 export const metadata = {
   title: "Projects",
   description:
-    "Case studies from Jay Ar Pelicano: GSU System, CampusChoice, URDS, Smart Farming, and this portfolio.",
+    "Case studies from Jay Ar Pelicano: GSU System, Faura-Farmer, CampusChoice, URDS, Smart Farming, and this portfolio.",
 };
 
 export default function ProjectsPage() {

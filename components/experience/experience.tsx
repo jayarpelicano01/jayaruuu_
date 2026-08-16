@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowDownRight } from "lucide-react";
 import { experience } from "@/data/experience";
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/ui/reveal";
@@ -10,7 +11,7 @@ export default function Experience() {
   return (
     <section id="experience" className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
       <Reveal>
-        <SectionHeading index="04" title="Experience" meta="Click or hover to expand" />
+        <SectionHeading index="03" title="Experience" meta="Click or hover to expand" />
       </Reveal>
 
       <div className="mt-8">
@@ -45,6 +46,11 @@ function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
         </span>
       </div>
 
+      <p className="mt-4 flex items-start gap-3 text-xl leading-relaxed text-ink/80 sm:text-2xl">
+        <ArrowDownRight aria-hidden className="mt-1 h-5 w-5 shrink-0 text-muted" />
+        <span>{item.highlight}</span>
+      </p>
+
       <motion.div
         initial={false}
         animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
@@ -61,9 +67,9 @@ function ExperienceRow({ item }: { item: (typeof experience)[number] }) {
                 {item.org}
               </span>
             ) : null}
-            <span className="text-xl text-muted">{item.role}</span>
+            <span className="text-xl text-muted sm:text-2xl">{item.role}</span>
           </div>
-          <ul className="mt-6 space-y-3 text-xl leading-relaxed text-ink/80">
+          <ul className="mt-6 space-y-3 text-xl leading-relaxed text-ink/80 sm:text-2xl">
             {item.points.map((point) => (
               <li key={point} className="flex gap-4">
                 <span aria-hidden className="font-mono text-sm text-muted">

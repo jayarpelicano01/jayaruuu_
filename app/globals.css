@@ -26,10 +26,10 @@
   --color-paper: var(--paper);
   --color-black: #000000;
 
-  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
-  --container-content: 72rem;
+  --container-content: 100rem;
 }
 
 body {

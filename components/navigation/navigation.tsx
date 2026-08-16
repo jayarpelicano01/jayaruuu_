@@ -45,7 +45,7 @@ export default function Navigation() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line/60 bg-bg/85 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-content items-center justify-between px-5 py-4 sm:px-8">
+      <nav className="mx-auto flex max-w-content items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
         <Link
           href="/#top"
           className="flex flex-col leading-none text-ink"
