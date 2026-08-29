@@ -13,8 +13,8 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-svh flex-col justify-center overflow-hidden border-b border-line"
     >
-      <div className="mx-auto grid w-full max-w-content gap-10 px-5 py-32 sm:px-8 lg:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-center lg:gap-16 lg:py-40">
-        <div className="pb-8">
+      <div className="mx-auto grid w-full max-w-content grid-cols-[minmax(0,1fr)] gap-10 px-5 py-32 sm:px-8 lg:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-center lg:gap-16 lg:py-40">
+        <div className="min-w-0 pb-8">
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,29 +70,9 @@ export default function Hero() {
             <Magnetic>
               <a
                 href="#work"
-                className="group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink hover:text-muted"
+                className="group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink hover:text-muted focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-4"
               >
-                View My Work
-                <span
-                  aria-hidden
-                  className="transition-transform duration-300 group-hover:translate-y-0.5"
-                >
-                  ↓
-                </span>
-              </a>
-            </Magnetic>
-            <Magnetic>
-              <a
-                href="#contact"
-                className="group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-muted hover:text-ink"
-              >
-                Get in touch{" "}
-                <span
-                  aria-hidden
-                  className="transition-transform duration-300 group-hover:translate-x-0.5"
-                >
-                  →
-                </span>
+                View selected work
               </a>
             </Magnetic>
           </motion.div>
@@ -103,7 +83,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             className="mt-12 font-mono text-xs uppercase tracking-widest text-muted/70"
           >
-            {site.fullName} · @{site.handle}
+            Magna Cum Laude · Champion, UEP 2nd Arduino Innovator Challenge (2025)
           </motion.p>
         </div>
 

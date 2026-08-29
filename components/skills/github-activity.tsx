@@ -197,7 +197,7 @@ export default async function GitHubActivity() {
 
   return (
     <div className="mt-20 border border-line p-8 lg:px-16">
-      <div className="flex items-baseline justify-between">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-0">
         <h3 className="font-mono text-lg uppercase tracking-widest text-muted">
           GitHub Activity
         </h3>
@@ -205,13 +205,13 @@ export default async function GitHubActivity() {
           href={`https://github.com/${USERNAME}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-mono text-base text-muted transition-colors hover:text-ink"
+          className="break-all font-mono text-base text-muted transition-colors hover:text-ink sm:break-normal"
         >
           github.com/{USERNAME}
         </a>
       </div>
 
-      <div className="mt-6 flex items-center gap-8">
+      <div className="mt-6 flex flex-col items-center gap-8 sm:flex-row">
         <div>
           <p className="text-3xl tracking-tight text-ink">
             {stats ? totalContributions : "—"}

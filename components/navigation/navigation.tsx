@@ -7,20 +7,21 @@ import { site } from "@/data/site";
 import ThemeToggle from "@/components/ui/theme-toggle";
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Education", href: "/#education", sectionId: "education" },
+  { label: "Experience", href: "/#experience", sectionId: "experience" },
+  { label: "Work", href: "/#work", sectionId: "work" },
+  { label: "About", href: "/#about", sectionId: "about" },
+  { label: "Contact", href: "/#contact", sectionId: "contact" },
 ];
 
-const sectionHrefs = links.map((l) => l.href.slice(1));
+const sectionIds = links.map((link) => link.sectionId);
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
 
   useEffect(() => {
-    const sections = sectionHrefs
+    const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
 
@@ -64,7 +65,7 @@ export default function Navigation() {
             <NavLink
               key={link.href}
               href={link.href}
-              active={active === link.href.slice(1)}
+              active={active === link.sectionId}
             >
               {link.label}
             </NavLink>

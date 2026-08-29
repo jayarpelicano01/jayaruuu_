@@ -6,6 +6,7 @@ import { projects, getProject } from "@/data/projects";
 import Reveal from "@/components/ui/reveal";
 import ArrowLink from "@/components/ui/arrow-link";
 import ProjectGallery from "@/components/projects/project-gallery";
+import ArchitectureFlow from "@/components/projects/architecture-flow";
 import { site } from "@/data/site";
 
 type Props = {
@@ -64,7 +65,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mt-10 grid gap-8 border-y border-line py-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-8 border-y border-line py-8 sm:grid-cols-2 lg:grid-cols-5">
             <div>
               <p className="font-mono text-xs uppercase tracking-widest text-muted">
                 Role
@@ -77,6 +78,14 @@ export default async function CaseStudyPage({ params }: Props) {
               </p>
               <p className="mt-1.5 text-sm font-medium">{project.year}</p>
             </div>
+            <div>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted">
+                Status
+              </p>
+              <p className="mt-1.5 text-sm font-medium">
+                {project.availability.status}
+              </p>
+            </div>
             <div className="sm:col-span-2">
               <p className="font-mono text-xs uppercase tracking-widest text-muted">
                 Stack
@@ -86,30 +95,6 @@ export default async function CaseStudyPage({ params }: Props) {
               </p>
             </div>
           </div>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <div className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
-            {project.liveDemo ? (
-              <ArrowLink href={project.liveDemo}>
-                {project.liveDemoLabel ?? "Live Demo"}
-              </ArrowLink>
-            ) : project.liveDemoLabel ? (
-              <span className="font-mono text-sm uppercase tracking-widest text-muted">
-                {project.liveDemoLabel}
-              </span>
-            ) : null}
-            {project.source ? (
-              <ArrowLink href={project.source} muted>
-                Source Code
-              </ArrowLink>
-            ) : null}
-          </div>
-          {project.liveNote ? (
-            <p className="mt-4 max-w-md font-mono text-xs text-muted">
-              {project.liveNote}
-            </p>
-          ) : null}
         </Reveal>
       </header>
 
@@ -166,8 +151,8 @@ export default async function CaseStudyPage({ params }: Props) {
         <List items={cs.solution} />
       </CaseSection>
 
-      <CaseSection number="04" title="My Role">
-        <List items={cs.role} />
+      <CaseSection number="04" title="My Contribution">
+        <List items={cs.contribution} />
       </CaseSection>
 
       <CaseSection number="05" title="Key Features">
@@ -186,23 +171,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </CaseSection>
 
       <CaseSection number="06" title="Technical Architecture">
-        <div className="mt-6 flex flex-col gap-0">
-          {cs.architecture.map((node, i) => (
-            <Reveal key={node} delay={0.04 * i}>
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-xs text-muted">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="min-w-44 border border-line bg-paper px-4 py-2.5 font-mono text-sm">
-                  {node}
-                </span>
-              </div>
-              {i < cs.architecture.length - 1 ? (
-                <span className="ml-[3.4rem] block h-4 border-l border-line" />
-              ) : null}
-            </Reveal>
-          ))}
-        </div>
+        <ArchitectureFlow steps={cs.architecture} />
       </CaseSection>
 
       <CaseSection number="07" title="Development Challenges">
@@ -227,24 +196,33 @@ export default async function CaseStudyPage({ params }: Props) {
         <List items={cs.outcome} />
       </CaseSection>
 
-      <CaseSection number="09" title="Links">
+      <CaseSection number="09" title="Limitations">
+        <List items={cs.limitations} />
+      </CaseSection>
+
+      <CaseSection number="10" title="Links and Availability">
         <div className="mt-6 flex flex-wrap gap-x-10 gap-y-4">
-          {project.liveDemo ? (
-            <ArrowLink href={project.liveDemo}>
-              {project.liveDemoLabel ?? "Live Demo"}
+          {project.availability.demo ? (
+            <ArrowLink href={project.availability.demo.href}>
+              {project.availability.demo.label}
             </ArrowLink>
           ) : null}
-          {project.source ? (
-            <ArrowLink href={project.source} muted>
-              GitHub
+          {project.availability.source ? (
+            <ArrowLink href={project.availability.source.href} muted>
+              {project.availability.source.label}
             </ArrowLink>
           ) : null}
         </div>
-        {project.liveNote ? (
-          <p className="mt-4 max-w-md font-mono text-xs text-muted">
-            {project.liveNote}
+        <div className="mt-6 space-y-3 font-mono text-xs leading-relaxed text-muted">
+          <p>
+            <span className="text-ink">Status:</span>{" "}
+            {project.availability.statusNote}
           </p>
-        ) : null}
+          <p>
+            <span className="text-ink">Source:</span>{" "}
+            {project.availability.sourceNote}
+          </p>
+        </div>
       </CaseSection>
 
       <div className="mx-auto mt-20 max-w-content px-5 sm:px-8">
@@ -292,7 +270,7 @@ function CaseSection({
 function CaseSectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <h2 className="flex items-baseline gap-4 text-2xl font-medium tracking-tight">
-      <span className="font-mono text-sm text-muted" aria-hidden>
+      <span className="font-mono text-sm text-muted">
         {children}
       </span>
     </h2>

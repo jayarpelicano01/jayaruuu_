@@ -134,7 +134,51 @@ Major visual and structural refactor of the Jay Ar Pelicano portfolio to attract
 - **All builds:** Pass successfully
 
 ---
-<tool_call>
-<function=terminal>
-<parameter=command>
-ls -la "/c/Users/LENOVO/Documents/jayar/Knowledge-Base/jayaruuu-me/02_Skills-Projects/Projects/portfolio/2026-08-16/"
+
+## Session 2 — Feature Additions (post-refactor)
+
+### 12. GitHub Activity Graph Size
+- **File:** `components/skills/github-activity.tsx`
+- **Change:** Removed `max-w-[640px]` cap from the contribution graph SVG
+- **Effect:** Squares now scale to fill the full container width — takes most of the screen
+
+### 13. Selected Work — 4-Up Grid
+- **File:** `components/projects/selected-work.tsx`
+- **Change:** Replaced "1 hero project + 2 grid" layout with a 2×2 grid of 4 projects: GSU + SmartFarming on top, URDS + CampusChoice below
+- **Effect:** Every project gets equal showcase space; meta updated to "Top 4 Projects"; cards use `aspect-[16/10]`
+
+### 14. Welcome Intro Animation
+- **File:** `components/ui/welcome-intro.tsx` + `app/layout.tsx`
+- **Change:** Added a session-once preloader that mirrors the hero's split-type treatment:
+  - "Jay Ar" (outlined stroke) + "Pelicano" (solid) slide in like a typewriter carriage behind a mask
+  - Editorial mono meta in corners, hairline progress bar + 0–100% counter at the bottom
+  - Exits with a curtain lift (~2.3s total)
+  - Shown once per session via `sessionStorage`, scroll locked while visible, skipped for `prefers-reduced-motion`
+- **Effect:** Quick, on-brand welcome for first-time visitors
+
+### 15. AI Tools & Agents Category
+- **File:** `data/skills.ts` + `components/skills/skills.tsx`
+- **Change:** Added a 5th skill category: OpenCode CLI, Hermes Agent, ChatGPT, Claude, Gemini (icons from react-icons tabler/simple-icons)
+- **Effect:** Positions the developer as AI-leveraging — a key employer signal; grid changed `lg:grid-cols-4` → `lg:grid-cols-5` so all categories sit in one row
+
+### 16. Database Skills
+- **File:** `data/skills.ts` + `components/skills/skills.tsx`
+- **Change:** Added PostgreSQL (`SiPostgresql`) and Supabase (`SiSupabase`) to the Database category
+
+### 17. Faura-Farmer Project
+- **File:** `data/projects.ts` + `app/projects/page.tsx` + `README.md`
+- **Change:** Added "Faura-Farmer: Personal Finance Tracker" as project **02** with full case study (Next.js 15, React 19, Prisma, PostgreSQL, Auth.js v5), live demo (`faura-farmer.vercel.app`), and 5 gallery screenshots; renumbered CampusChoice → 03, URDS → 04, SmartFarming → 05, Portfolio → 06
+- **Effect:** Six projects total; the finance tracker gets prominent placement as a flagship modern full-stack build
+
+---
+
+## Build Status (Session 2)
+
+- **`npm run build`**: ✅ Passes with no errors
+- **All 15 pages:** Generated successfully (incl. new `/projects/faura-farmer`)
+
+---
+
+## Commit
+
+- **`1a6c2d4`** — `feat: welcome intro, AI stack, GitHub activity, Faura-Farmer project, 4-up selected work`

@@ -52,9 +52,10 @@ export default function About() {
           <p className="mt-6 text-lg text-muted lg:text-2xl">
             My background includes an OJT internship with the General Services
             Unit and ICT Department of the University of the Eastern
-            Philippines, where I shipped a production job request system, plus
-            a capstone electronic voting platform, an IoT agriculture project,
-            and more. I graduated with a degree in Information Technology and
+            Philippines, where I built and deployed a job request system during
+            OJT. My other work includes academic projects such as CampusChoice,
+            an electronic voting platform, and SmartFarming, an IoT agriculture
+            project. I graduated with a degree in Information Technology and
             ranked Magna Cum Laude.
           </p>
         </Reveal>

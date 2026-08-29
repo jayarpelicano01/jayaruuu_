@@ -1,22 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { projects, type Project } from "@/data/projects";
+import {
+  featuredProjectSlugs,
+  projects,
+  type Project,
+} from "@/data/projects";
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/ui/reveal";
 import ArrowLink from "@/components/ui/arrow-link";
 
-const featured = ["gsu-system", "smart-farming", "urds-system", "campuschoice"];
-const selected = projects.filter((project) => featured.includes(project.slug));
+const projectBySlug = new Map(projects.map((project) => [project.slug, project]));
+const selected = featuredProjectSlugs.map((slug) => {
+  const project = projectBySlug.get(slug);
+  if (!project) throw new Error(`Missing featured project: ${slug}`);
+  return project;
+});
 
 type ProjectCardProps = {
   project: Project;
+  displayNumber: string;
   eager?: boolean;
   aspect: string;
   sizes: string;
 };
 
-function ProjectCard({ project, eager, aspect, sizes }: ProjectCardProps) {
+function ProjectCard({
+  project,
+  displayNumber,
+  eager,
+  aspect,
+  sizes,
+}: ProjectCardProps) {
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -36,14 +51,14 @@ function ProjectCard({ project, eager, aspect, sizes }: ProjectCardProps) {
       <div className="flex flex-1 flex-col p-7 sm:p-10">
         <div className="flex items-center justify-between">
           <span className="font-mono text-xs text-muted">
-            {project.number}
+            {displayNumber}
           </span>
           <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted">
             <span
               aria-hidden
               className="h-1.5 w-1.5 rounded-full bg-current"
             />
-            {project.status}
+            {project.availability.status}
           </span>
         </div>
 
@@ -72,9 +87,9 @@ function ProjectCard({ project, eager, aspect, sizes }: ProjectCardProps) {
             View Project
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </span>
-          {project.liveDemo ? (
-            <span className="font-mono text-sm uppercase tracking-widest text-muted transition-colors hover:text-ink">
-              {project.liveDemoLabel ?? "Live Demo"}
+          {project.availability.demo ? (
+            <span className="font-mono text-sm uppercase tracking-widest text-muted">
+              Status: {project.availability.demo.label}
             </span>
           ) : null}
         </div>
@@ -87,14 +102,19 @@ export default function SelectedWork() {
   return (
     <section id="work" className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
       <Reveal>
-        <SectionHeading index="02" title="Selected Work" meta="Top 4 Projects" />
+        <SectionHeading
+          index="03"
+          title="Selected Work"
+          meta="Four flagship projects"
+        />
       </Reveal>
 
       <div className="mt-8 grid gap-8 md:grid-cols-2">
-        {selected.map((project) => (
+        {selected.map((project, i) => (
           <Reveal key={project.slug}>
             <ProjectCard
               project={project}
+              displayNumber={String(i + 1).padStart(2, "0")}
               aspect="aspect-[16/10]"
               sizes="(min-width: 768px) 50vw, 100vw"
             />

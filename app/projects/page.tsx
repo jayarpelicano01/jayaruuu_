@@ -38,13 +38,17 @@ export default function ProjectsPage() {
                   <span className="font-mono text-xs text-muted">
                     {project.number}
                   </span>
-                  <span className="font-mono text-xs uppercase tracking-widest text-muted">
-                    {project.category}
+                  <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted">
+                    <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-current" />
+                    {project.availability.status}
                   </span>
                 </div>
                 <h2 className="text-2xl font-medium tracking-tight transition-colors group-hover:text-muted">
                   {project.title}
                 </h2>
+                <p className="font-mono text-xs uppercase tracking-widest text-muted">
+                  {project.category}
+                </p>
                 <p className="text-sm text-muted">{project.description}</p>
                 <p className="font-mono text-xs uppercase tracking-widest text-muted">
                   {project.stack.join(" · ")}

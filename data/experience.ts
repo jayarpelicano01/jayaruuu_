@@ -16,40 +16,12 @@ export const experience: ExperienceItem[] = [
     org: "University of the Eastern Philippines",
     role: "OJT Trainee / Full-Stack Developer",
     highlight:
-      "Engineered a production job request and ordering system that automated clerical workflows and cut manual tracking errors by ~40%.",
+      "Built and deployed a job request and ordering system that automated clerical workflows and improved record consistency.",
     points: [
-      "Engineered and deployed a full-stack Job Request and Ordering System using Node.js, Express.js, and MySQL.",
-      "Developed a responsive frontend with Next.js and TypeScript, improving data processing times.",
-      "Automated job order generation and accomplishment reports, cutting manual tracking errors by ~40%.",
-      "Managed data entry and verified administrative records for Purchase Requests (PRs) and Requisition and Issue Slips (RIS).",
-    ],
-  },
-  {
-    year: "2026",
-    kind: "CAPSTONE PROJECT",
-    title: "CampusChoice",
-    org: "University of the Eastern Philippines",
-    role: "Lead Full-Stack Developer",
-    highlight:
-      "Built a secure electronic voting platform that kept ballots anonymous and tallied results in real time during student elections.",
-    points: [
-      "Developed a secure electronic voting platform for university student elections.",
-      "Built the dynamic frontend in HTML, CSS, and JavaScript.",
-      "Architected the MySQL schema with normalization and real-time election tallying.",
-    ],
-  },
-  {
-    year: "2025",
-    kind: "SYSTEM DEVELOPMENT",
-    title: "Smart Farming",
-    org: "IoT Agricultural Monitoring System",
-    role: "Full-Stack / IoT Developer",
-    highlight:
-      "Co-developed an IoT agriculture system that won the UEP 2nd Arduino Innovator Challenge.",
-    points: [
-      "Co-developed an IoT system integrating Arduino sensors with a web dashboard.",
-      "Architected a data-driven backend with Spring Boot, Node.js, Express.js, and MySQL.",
-      "Champion · UEP 2nd Arduino Innovator Challenge (2025).",
+      "Built and deployed the full-stack Job Request and Ordering System with Node.js, Express.js, and MySQL.",
+      "Developed the Next.js and TypeScript interface for request, inspection, procurement, and report workflows.",
+      "Automated job order generation and accomplishment reporting, reducing reliance on manual record tracking.",
+      "Entered data and verified administrative records for Purchase Requests (PRs) and Requisition and Issue Slips (RIS).",
     ],
   },
 ]
@@ -85,8 +57,8 @@ export const honors: Honor[] = [
       "Graduated with distinction from BS Information Technology at University of the Eastern Philippines with a cumulative GWA of 1.41.",
   },
   {
-    title: "Champion · UEP 2nd Arduino Innovator Challenge",
+    title: "Champion, UEP 2nd Arduino Innovator Challenge (2025)",
     description:
-      "Led the development of SmartFarming, an IoT agricultural monitoring system that won first place in the 2025 competition.",
+      "SmartFarming was the team project recognized as champion in the 2025 competition.",
   },
 ]
