@@ -24,6 +24,9 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
+  alternates: {
+    canonical: site.domain,
+  },
   title: {
     default: "Jay Ar Pelicano | Junior Software Developer",
     template: "%s | Jay Ar Pelicano",

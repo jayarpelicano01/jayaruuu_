@@ -12,7 +12,7 @@ export const site = {
   github: "https://github.com/jayarpelicano01",
   linkedin: "https://www.linkedin.com/in/agustin-pelicano-jr-77062a3a6/",
   resume: "/resume/AGUSTIN_RONATO_PELICANO_JR_CV.pdf",
-  domain: "https://jayarpelicano.dev",
+  domain: "https://jayaruuu.vercel.app",
   ogImage: "/opengraph-image",
 } as const
 
