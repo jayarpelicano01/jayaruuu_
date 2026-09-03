@@ -52,7 +52,7 @@ export default function ArrowLink({
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} prefetch={false} className={classes}>
       {inner}
     </Link>
   );

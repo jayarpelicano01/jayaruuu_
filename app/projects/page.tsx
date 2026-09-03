@@ -21,7 +21,7 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <Reveal key={project.slug}>
             <Link
-              href={`/projects/${project.slug}`}
+              href={`/projects/${project.slug}`} prefetch={false}
               className="group block border border-line bg-paper"
             >
               <div className="relative aspect-[4/3] overflow-hidden border-b border-line">

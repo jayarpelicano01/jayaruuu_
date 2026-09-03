@@ -34,7 +34,7 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <Link
-      href={`/projects/${project.slug}`}
+      href={`/projects/${project.slug}`} prefetch={false}
       className="group flex h-full flex-col overflow-hidden border border-line bg-paper transition-all duration-300 hover:-translate-y-1"
     >
       <div className={`relative overflow-hidden border-b border-line ${aspect}`}>
