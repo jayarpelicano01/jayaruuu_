@@ -1,5 +1,8 @@
+"use client";
+
 import { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring } from "motion/react";
+import Image from "next/image";
+import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/react";
 import "./TiltedCard.css";
 
 const springValues = {
@@ -38,9 +41,10 @@ export default function TiltedCard({
   });
 
   const [lastY, setLastY] = useState(0);
+  const reduce = useReducedMotion();
 
   function handleMouse(e) {
-    if (!ref.current) return;
+    if (!ref.current || reduce) return;
 
     const rect = ref.current.getBoundingClientRect();
     const offsetX = e.clientX - rect.left - rect.width / 2;
@@ -61,6 +65,7 @@ export default function TiltedCard({
   }
 
   function handleMouseEnter() {
+    if (reduce) return;
     scale.set(scaleOnHover);
     opacity.set(1);
   }
@@ -101,14 +106,12 @@ export default function TiltedCard({
           scale,
         }}
       >
-        <motion.img
+        <Image
           src={imageSrc}
           alt={altText}
+          fill
+          sizes="(min-width: 1024px) 28rem, 20rem"
           className="tilted-card-img"
-          style={{
-            width: imageWidth,
-            height: imageHeight,
-          }}
         />
 
         {displayOverlayContent && overlayContent && (

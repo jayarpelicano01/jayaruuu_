@@ -86,7 +86,7 @@ export default function WelcomeIntro() {
               Welcome to my portfolio
             </motion.p>
 
-            <h1 className="text-center">
+            <div className="text-center">
               <span className="block overflow-hidden">
                 <motion.span
                   initial={{ x: "-110%" }}
@@ -107,7 +107,7 @@ export default function WelcomeIntro() {
                   Pelicano
                 </motion.span>
               </span>
-            </h1>
+            </div>
 
             <motion.p
               initial={{ opacity: 0 }}
@@ -124,7 +124,7 @@ export default function WelcomeIntro() {
               <div className="h-px bg-ink" style={{ width: `${progress}%` }} />
             </div>
             <div className="mt-3 flex items-center justify-between font-mono text-[11px] uppercase tracking-widest text-muted sm:text-sm">
-              <span>Loading</span>
+              <span>Loading…</span>
               <span className="tabular-nums">{progress}%</span>
             </div>
           </div>

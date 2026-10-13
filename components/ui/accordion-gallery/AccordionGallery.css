@@ -1,7 +1,7 @@
 .accordion-gallery {
-  --ag-accent: #ffffff;
-  --ag-overlay: #060010;
-  --ag-text: #ffffff;
+  --ag-accent: var(--color-bg);
+  --ag-overlay: var(--color-ink);
+  --ag-text: var(--color-bg);
   --ag-gap: 10px;
   --ag-radius: 16px;
   --ag-media-size: 320px;
@@ -28,14 +28,19 @@
   border-radius: var(--ag-radius);
   cursor: pointer;
   display: block;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
   text-decoration: none;
   outline: none;
   transform-style: preserve-3d;
   transform-origin: center center;
-  background: #0a0713;
+  background: var(--color-ink);
   box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.8);
   will-change: flex-grow, transform;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .ag-panel:focus-visible {

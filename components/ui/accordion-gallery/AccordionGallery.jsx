@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 
@@ -14,9 +16,9 @@ const DEFAULT_ITEMS = [
 const AccordionGallery = ({
   items = DEFAULT_ITEMS,
   defaultIndex = 2,
-  accentColor = '#ffffff',
-  overlayColor = '#060010',
-  textColor = '#ffffff',
+  accentColor = 'var(--color-bg)',
+  overlayColor = 'var(--color-ink)',
+  textColor = 'var(--color-bg)',
   height = 460,
   gap = 10,
   radius = 16,
@@ -192,7 +194,7 @@ const AccordionGallery = ({
     >
       {items.map((item, i) => {
         const isActive = i === active;
-        const Tag = item.link ? 'a' : 'div';
+        const Tag = item.link ? 'a' : 'button';
         return (
           <Tag
             key={i}
@@ -200,18 +202,17 @@ const AccordionGallery = ({
             className={`ag-panel${isActive ? ' ag-panel--active' : ''}`}
             style={{ borderRadius: `${radius}px` }}
             href={item.link || undefined}
+            type={item.link ? undefined : 'button'}
             onClick={e => handleClick(i, e)}
             onMouseEnter={() => handleEnter(i)}
             onFocus={() => setActive(i)}
             onKeyDown={e => handleKeyDown(i, e)}
-            role="listitem"
-            tabIndex={0}
-            aria-current={isActive ? 'true' : undefined}
+            aria-expanded={isActive}
             aria-label={item.label}
           >
             <span className="ag-panel__frame">
               <span className="ag-panel__media" ref={el => (mediaRefs.current[i] = el)}>
-                <img src={item.image} alt={item.alt || item.label || ''} draggable="false" />
+                <img src={item.image} alt={item.alt || item.label || ''} draggable="false" loading="lazy" decoding="async" />
               </span>
               <span className="ag-panel__overlay" aria-hidden="true" />
             </span>
