@@ -89,7 +89,7 @@ export default function Hero() {
           initial={reduce ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5, ease }}
-          className="mt-8 border-t border-line pt-4 md:mt-12 md:pt-6"
+          className="mt-8 border-y border-line py-4 md:mt-12 md:py-6"
         >
           <div data-allow-overflow className="overflow-hidden">
             <motion.p
