@@ -1,27 +1,37 @@
-export type ExperienceItem = {
-  year: string
-  kind: string
+export type ExperienceRole = {
   title: string
-  org?: string
   role: string
-  highlight: string
   points: string[]
 }
 
-export const experience: ExperienceItem[] = [
+export type ExperienceGroup = {
+  year: string
+  org: string
+  roles: ExperienceRole[]
+}
+
+export const experience: ExperienceGroup[] = [
   {
-    year: "2026",
-    kind: "OJT INTERNSHIP",
-    title: "GSU & ICT Department",
+    year: "Feb 2026 – May 2026",
     org: "University of the Eastern Philippines",
-    role: "OJT Trainee / Full-Stack Developer",
-    highlight:
-      "Built and deployed a job request and ordering system that automated clerical workflows and improved record consistency.",
-    points: [
-      "Built and deployed the full-stack Job Request and Ordering System with Node.js, Express.js, and MySQL.",
-      "Developed the Next.js and TypeScript interface for request, inspection, procurement, and report workflows.",
-      "Automated job order generation and accomplishment reporting, reducing reliance on manual record tracking.",
-      "Entered data and verified administrative records for Purchase Requests (PRs) and Requisition and Issue Slips (RIS).",
+    roles: [
+      {
+        title: "Full Stack Developer",
+        role: "ICT Department",
+        points: [
+          "Built and deployed a full-stack Job Request and Ordering System (Node.js, Express.js, MySQL).",
+          "Developed responsive Next.js/TypeScript frontend with role-based access and structured data management.",
+          "Integrated automated job order generation and accomplishment reports, reducing manual tracking.",
+        ],
+      },
+      {
+        title: "Administrative Support",
+        role: "General Services Unit",
+        points: [
+          "Coordinated job request workflows: documentation, record-keeping, and department head support.",
+          "Managed data entry and verified procurement records (Purchase Requests, Requisition and Issue Slips).",
+        ],
+      },
     ],
   },
 ]

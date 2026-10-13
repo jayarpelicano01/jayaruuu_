@@ -1,10 +1,11 @@
 export const site = {
   name: "Jay Ar Pelicano",
-  fullName: "Agustin Ronato Pelicano Jr.",
-  handle: "jayaruuu_",
+  fullName: "Agustin Pelicano Jr.",
+  handle: "jayaruuu",
   roles: ["Junior Software Developer", "Full-Stack Developer"],
   tagline:
     "I build practical full-stack systems for organizations replacing manual workflows.",
+  taglineSecond: "I currently build new projects with generative AI, from first draft to working demo.",
   location: "Philippines",
   city: "Paranaque City, Philippines",
   email: "jayarpelicano01@gmail.com",
