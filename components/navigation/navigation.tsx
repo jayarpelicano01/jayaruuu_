@@ -87,7 +87,7 @@ export default function Navigation() {
     >
       <nav
         className={`mx-auto flex max-w-content items-center justify-between px-5 py-4 transition-[padding] duration-300 sm:px-8 lg:px-12 ${
-          scrolled ? "md:py-2" : "md:py-4"
+          scrolled ? "md:py-1" : "md:py-4"
         }`}
       >
         <Link
@@ -100,7 +100,7 @@ export default function Navigation() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden text-sm items-center gap-3 md:flex">
           {links.map((link) => (
             <NavLink
               key={link.href}
@@ -114,7 +114,7 @@ export default function Navigation() {
             href={site.resume}
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex items-center font-mono text-sm uppercase tracking-widest text-ink hover:text-muted"
+            className="inline-flex items-center font-mono text-xs uppercase tracking-widest text-ink hover:text-muted"
           >
             CV <span aria-hidden>↗</span>
           </a>
@@ -176,7 +176,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="group font-mono text-[13px] uppercase tracking-widest text-ink transition-colors hover:text-muted focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+      className="group font-mono text-[12px] uppercase tracking-widest text-ink transition-colors hover:text-muted focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
       aria-current={active ? "true" : undefined}
     >
       <span className="relative">

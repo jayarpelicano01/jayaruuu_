@@ -1,7 +1,7 @@
 export const site = {
   name: "Jay Ar Pelicano",
   fullName: "Agustin Pelicano Jr.",
-  handle: "jayaruuu",
+  handle: "jayarpelicano01",
   roles: ["Junior Software Developer", "Full-Stack Developer"],
   tagline:
     "I build practical full-stack systems for organizations replacing manual workflows.",
