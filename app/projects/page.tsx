@@ -22,7 +22,7 @@ export default function ProjectsPage() {
           <Reveal key={project.slug}>
             <Link
               href={`/projects/${project.slug}`} prefetch={false}
-              className="group block border border-line bg-paper"
+              className="group block border border-line bg-paper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
             >
               <div className="relative aspect-[4/3] overflow-hidden border-b border-line">
                 <Image

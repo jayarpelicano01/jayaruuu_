@@ -9,7 +9,7 @@ export default function ProjectsLayout({
   return (
     <>
       <Navigation />
-      <main>{children}</main>
+      <main id="main">{children}</main>
       <Footer />
     </>
   );

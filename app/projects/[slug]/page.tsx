@@ -45,7 +45,7 @@ export default async function CaseStudyPage({ params }: Props) {
         <Reveal>
           <Link
             href="/projects"
-            className="font-mono text-xs uppercase tracking-widest text-muted hover:text-ink"
+            className="inline-block py-1.5 font-mono text-xs uppercase tracking-widest text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
           >
             ← All projects
           </Link>

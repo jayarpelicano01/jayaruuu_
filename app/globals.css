@@ -3,6 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  color-scheme: light dark;
   --bg: #f7f7f5;
   --ink: #111111;
   --muted: #666666;
@@ -29,7 +30,7 @@
   --font-display: var(--font-cormorant), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
-  --container-content: 100rem;
+  --container-content: 48rem;
 }
 
 body {

@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Cursor />
       <Navigation />
-      <main>
+      <main id="main">
         <Hero />
         <Education />
         <Experience />

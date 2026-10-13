@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono, Cormorant_Garamond } from "next/font/google";
+import { JetBrains_Mono, Cormorant_Garamond } from "next/font/google";
 import { site } from "@/data/site";
 import WelcomeIntro from "@/components/ui/welcome-intro";
 import "./globals.css";
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -91,8 +85,14 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${cormorant.variable} h-full antialiased`}
+        className={`${jetbrainsMono.variable} ${cormorant.variable} h-full antialiased`}
       >
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[300] focus:border focus:border-ink focus:bg-bg focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:uppercase focus:tracking-widest focus:text-ink"
+        >
+          Skip to content
+        </a>
         <WelcomeIntro />
         {children}
       </body>
