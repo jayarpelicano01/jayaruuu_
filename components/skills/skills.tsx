@@ -35,7 +35,7 @@ const iconMap: Record<string, IconType> = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-t border-line bg-paper">
+    <section id="skills">
       <div className="mx-auto max-w-content px-5 py-12 sm:px-8 sm:py-16">
         <Reveal>
           <SectionHeading index="04" title="Tech Stack" meta="Proven by projects" />

@@ -4,7 +4,7 @@ import Reveal from "@/components/ui/reveal";
 
 export default function Education() {
   return (
-    <section id="education" className="border-t border-line bg-paper">
+    <section id="education">
       <div className="mx-auto max-w-content px-5 py-12 sm:px-8 sm:py-16">
         <Reveal>
           <SectionHeading index="01" title="Education & Honors" />

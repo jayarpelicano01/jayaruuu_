@@ -16,7 +16,7 @@ export default function ArrowLink({
   muted = false,
   className = "",
 }: ArrowLinkProps) {
-  const classes = `group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest transition-colors focus-visible:outline-2 focus-visible:outline-ink ${
+  const classes = `group inline-flex items-center gap-2 font-mono text-sm tracking-widest transition-colors focus-visible:outline-2 focus-visible:outline-ink ${
     muted ? "text-muted hover:text-ink" : "text-ink hover:text-muted"
   } ${className}`;
 

@@ -17,16 +17,11 @@ const skills = [
     description:
       "I build RESTful APIs with Node.js, Express.js, and Spring Boot, and I keep data consistent with normalized MySQL schemas.",
   },
-  {
-    name: "Problem Solving",
-    description:
-      "I break down messy requirements into clear, practical solutions, and I carry them from idea to deployment.",
-  },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="border-t border-line bg-paper">
+    <section id="about">
       <div className="mx-auto max-w-content px-5 py-12 sm:px-8 sm:py-16">
         <Reveal>
           <SectionHeading index="05" title="About" />

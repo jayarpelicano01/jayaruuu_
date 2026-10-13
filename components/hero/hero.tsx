@@ -14,34 +14,34 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-svh flex-col overflow-hidden border-b border-line pt-16 md:block md:min-h-0"
+      className="relative flex min-h-svh flex-col overflow-hidden pt-20 md:block md:min-h-0"
     >
       <div className="mx-auto my-auto w-full max-w-content px-5 py-10 sm:px-8 md:py-20">
-        <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12">
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease }}
             className="relative mx-auto w-full max-w-[9rem] sm:max-w-[12rem] md:mx-0 md:max-w-none"
           >
-            <div className="relative aspect-[3/4] w-full overflow-hidden border border-line bg-paper">
+            <div className="relative aspect-[3/4] border border-line rounded-[40px] w-full overflow-hidden">
               <Image
                 src="/images/profile/portrait.jpg"
                 alt={`Professional portrait of ${site.name}`}
                 fill
                 sizes="(min-width: 768px) 50vw, 40vw"
-                className="object-cover"
+                className="object-cover rounded-[40px]"
                 priority
               />
             </div>
           </motion.div>
 
-          <div className="min-w-0 text-center md:text-left">
+          <div className="min-w-0 text-center gap-20 md:text-left">
             <motion.h1
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease }}
-              className="whitespace-nowrap text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl md:text-3xl lg:text-4xl"
+              className="whitespace-nowrap text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl md:text-3xl lg:text-[40px]"
             >
               {site.fullName}
             </motion.h1>
@@ -50,7 +50,7 @@ export default function Hero() {
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease }}
-              className="mt-3 font-mono text-base uppercase tracking-widest text-muted md:mt-4"
+              className="mt-3 font-mono text-base tracking-widest text-muted md:mt-4"
             >
               {site.roles[1]}
             </motion.p>
@@ -59,7 +59,7 @@ export default function Hero() {
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease }}
-              className="mx-auto mt-4 max-w-xxl text-base leading-relaxed text-muted md:mx-0 lg:text-lg"
+              className="mx-auto mt-12 max-w-xxl text-base leading-relaxed text-muted md:mx-0 lg:text-lg"
             >
               {site.tagline}
             </motion.p>
@@ -77,10 +77,10 @@ export default function Hero() {
               initial={reduce ? false : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4, ease }}
-              className="mt-6 flex flex-wrap items-center justify-center gap-6 md:justify-start"
+              className="mt-12 flex flex-wrap items-center justify-center gap-6 md:justify-start"
             >
-              <ArrowLink href={site.github}>GitHub</ArrowLink>
-              <ArrowLink href={site.linkedin}>LinkedIn</ArrowLink>
+              <ArrowLink href={site.github}>github</ArrowLink>
+              <ArrowLink href={site.linkedin}>linkedin</ArrowLink>
             </motion.div>
           </div>
         </div>
@@ -95,9 +95,9 @@ export default function Hero() {
             <motion.p
               animate={reduce ? {} : { x: ["0%", "-50%"] }}
               transition={{ duration: 22, ease: "linear", repeat: Infinity }}
-              className="flex w-max whitespace-nowrap font-mono text-xs uppercase tracking-widest text-muted/70"
+              className="flex w-max whitespace-nowrap font-semibold text-xs uppercase tracking-widest text-muted"
             >
-              <span className="pr-8">{honor}</span>
+              <span className="pr-6">{honor}</span>
               <span aria-hidden="true" className="pr-8">
                 {honor}
               </span>

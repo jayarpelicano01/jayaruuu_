@@ -20,7 +20,7 @@ export default function SectionHeading({ index, title, meta }: SectionHeadingPro
       className="relative"
     >
       <div className="flex items-baseline justify-between pb-3">
-        <h2 className="flex items-baseline gap-4 text-2xl font-medium tracking-tight sm:text-3xl lg:text-4xl">
+        <h2 className="flex items-baseline gap-4 text-2xl font-[600] tracking-tight sm:text-3xl lg:text-4xl">
           <motion.span
             initial={reduce ? false : { opacity: 0, x: -12 }}
             whileInView={{ opacity: 1, x: 0 }}

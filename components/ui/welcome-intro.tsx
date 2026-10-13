@@ -92,7 +92,7 @@ export default function WelcomeIntro() {
                   initial={{ x: "-110%" }}
                   animate={{ x: "0%" }}
                   transition={{ duration: 0.85, ease: EASE }}
-                  className="text-stroke block text-[15vw] font-bold leading-[0.9] tracking-tight sm:text-8xl lg:text-[8.5rem]"
+                  className="font-display text-stroke block text-[15vw] font-bold leading-[0.9] tracking-tight sm:text-8xl lg:text-[8.5rem]"
                 >
                   Jay Ar
                 </motion.span>
@@ -102,7 +102,7 @@ export default function WelcomeIntro() {
                   initial={{ x: "-110%" }}
                   animate={{ x: "0%" }}
                   transition={{ duration: 0.85, delay: 0.12, ease: EASE }}
-                  className="block text-[15vw] font-bold leading-[0.9] tracking-tight text-ink sm:text-8xl lg:text-[8.5rem]"
+                  className="font-display block text-[15vw] font-bold leading-[0.9] tracking-tight text-ink sm:text-8xl lg:text-[8.5rem]"
                 >
                   Pelicano
                 </motion.span>

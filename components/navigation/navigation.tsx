@@ -81,7 +81,7 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-line/60 transition-[background-color] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b border-line/30 transition-[background-color] duration-300 ${
         scrolled ? "bg-bg md:backdrop-blur-none" : "bg-bg/85 backdrop-blur-sm"
       }`}
     >
