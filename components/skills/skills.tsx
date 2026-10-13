@@ -36,19 +36,19 @@ const iconMap: Record<string, IconType> = {
 export default function Skills() {
   return (
     <section id="skills" className="border-t border-line bg-paper">
-      <div className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-content px-5 py-12 sm:px-8 sm:py-16">
         <Reveal>
           <SectionHeading index="04" title="Tech Stack" meta="Proven by projects" />
         </Reveal>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {skills.map((category, ci) => (
             <Reveal key={category.name} delay={0.05 * ci}>
-              <div className="h-full border border-line p-6">
+              <div className="h-full border border-line p-5">
                 <h3 className="font-mono text-sm uppercase tracking-widest text-muted">
                   {String(ci + 1).padStart(2, "0")} · {category.name}
                 </h3>
-                <div className="mt-6 space-y-5">
+                <div className="mt-4 space-y-3">
                   {category.skills.map((skill) => {
                     const Icon = iconMap[skill.icon];
                     return (
@@ -56,7 +56,7 @@ export default function Skills() {
                         key={skill.name}
                         className="flex items-center gap-3"
                       >
-                        {Icon ? <Icon className="h-8 w-8 text-ink" /> : null}
+                        {Icon ? <Icon className="h-5 w-5 text-ink" /> : null}
                         <p className="text-lg font-medium tracking-tight">
                           {skill.name}
                         </p>

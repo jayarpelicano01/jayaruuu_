@@ -35,7 +35,7 @@ function ProjectCard({
   return (
     <Link
       href={`/projects/${project.slug}`} prefetch={false}
-      className="group flex h-full flex-col overflow-hidden border border-line bg-paper transition-all duration-300 hover:-translate-y-1"
+      className="group flex h-full flex-col overflow-hidden border border-line bg-paper transition-all duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
     >
       <div className={`relative overflow-hidden border-b border-line ${aspect}`}>
         <Image
@@ -48,7 +48,7 @@ function ProjectCard({
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-7 sm:p-10">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex items-center justify-between">
           <span className="font-mono text-xs text-muted">
             {displayNumber}
@@ -62,7 +62,7 @@ function ProjectCard({
           </span>
         </div>
 
-        <h3 className="mt-5 text-3xl font-medium tracking-tight sm:text-4xl">
+        <h3 className="mt-5 text-2xl font-medium tracking-tight">
           {project.title}
         </h3>
         <p className="mt-2 text-sm text-muted">{project.category}</p>
@@ -82,7 +82,7 @@ function ProjectCard({
           ))}
         </div>
 
-        <div className="mt-auto flex items-center gap-6 pt-8">
+        <div className="mt-auto flex items-center gap-6 pt-5">
           <span className="inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink">
             View Project
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -100,7 +100,7 @@ function ProjectCard({
 
 export default function SelectedWork() {
   return (
-    <section id="work" className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
+    <section id="work" className="mx-auto max-w-content px-5 py-12 sm:px-8 sm:py-16">
       <Reveal>
         <SectionHeading
           index="03"
@@ -109,14 +109,15 @@ export default function SelectedWork() {
         />
       </Reveal>
 
-      <div className="mt-8 grid gap-8 md:grid-cols-2">
+      <div className="mt-6 grid gap-5">
         {selected.map((project, i) => (
           <Reveal key={project.slug}>
             <ProjectCard
               project={project}
               displayNumber={String(i + 1).padStart(2, "0")}
+              eager={i < 2}
               aspect="aspect-[16/10]"
-              sizes="(min-width: 768px) 50vw, 100vw"
+              sizes="100vw"
             />
           </Reveal>
         ))}

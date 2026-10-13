@@ -44,11 +44,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-32">
-      <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+    <section id="contact" className="mx-auto max-w-content px-5 py-12 sm:px-8 sm:py-16">
+      <div className="grid gap-8">
         <Reveal>
           <div>
-            <h2 className="text-[14vw] font-medium leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
+            <h2 className="text-5xl font-medium leading-[0.95] tracking-tight sm:text-6xl">
               Let&apos;s
               <br />
               work
@@ -74,7 +74,7 @@ export default function Contact() {
         <Reveal delay={0.1} className="lg:pt-6">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-6 border border-line bg-paper p-6 sm:p-8"
+            className="flex flex-col gap-4 border border-line bg-paper p-6 sm:p-8"
           >
             <div className="flex flex-col gap-2">
               <label
@@ -85,12 +85,14 @@ export default function Contact() {
               </label>
               <input
                 id="contact-name"
+                name="name"
                 type="text"
                 required
+                autoComplete="name"
                 value={form.name}
                 onChange={update("name")}
-                placeholder="Your name"
-                className="border border-line bg-bg px-4 py-3 text-ink outline-none placeholder:text-muted/60 focus:border-ink"
+                placeholder="Your name…"
+                className="border border-line bg-bg px-4 py-3 text-ink placeholder:text-muted/60 focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               />
             </div>
 
@@ -103,12 +105,15 @@ export default function Contact() {
               </label>
               <input
                 id="contact-email"
+                name="email"
                 type="email"
                 required
+                autoComplete="email"
+                spellCheck={false}
                 value={form.email}
                 onChange={update("email")}
-                placeholder="you@example.com"
-                className="border border-line bg-bg px-4 py-3 text-ink outline-none placeholder:text-muted/60 focus:border-ink"
+                placeholder="you@example.com…"
+                className="border border-line bg-bg px-4 py-3 text-ink placeholder:text-muted/60 focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               />
             </div>
 
@@ -121,31 +126,33 @@ export default function Contact() {
               </label>
               <textarea
                 id="contact-message"
+                name="message"
                 required
-                rows={5}
+                rows={4}
+                autoComplete="off"
                 value={form.message}
                 onChange={update("message")}
-                placeholder="Tell me about your project or opportunity"
-                className="resize-none border border-line bg-bg px-4 py-3 text-ink outline-none placeholder:text-muted/60 focus:border-ink"
+                placeholder="Tell me about your project or opportunity…"
+                className="resize-none border border-line bg-bg px-4 py-3 text-ink placeholder:text-muted/60 focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
               />
             </div>
 
             <button
               type="submit"
               disabled={status === "sending"}
-              className="inline-flex items-center justify-center border border-ink bg-ink px-6 py-3 font-mono text-sm uppercase tracking-widest text-bg transition-colors hover:bg-transparent hover:text-ink disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex items-center justify-center border border-ink bg-ink px-6 py-3 font-mono text-sm uppercase tracking-widest text-bg transition-colors hover:bg-transparent hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === "sending" ? "Sending…" : "Send Message"}
             </button>
 
             {status === "success" ? (
-              <p className="font-mono text-sm text-ink">
+              <p role="status" aria-live="polite" className="font-mono text-sm text-ink">
                 Message sent. Thank you, I&apos;ll get back to you soon.
               </p>
             ) : null}
 
             {status === "error" ? (
-              <p className="font-mono text-sm text-muted">{error}</p>
+              <p role="alert" className="font-mono text-sm text-muted">{error}</p>
             ) : null}
           </form>
         </Reveal>

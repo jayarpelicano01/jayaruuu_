@@ -23,10 +23,10 @@ const MONTHS = [
 
 const LEVELS = [
   "var(--color-line)",
-  "#9be9a8",
-  "#40c463",
-  "#30a14e",
-  "#216e39",
+  "color-mix(in srgb, var(--color-ink) 25%, var(--color-bg))",
+  "color-mix(in srgb, var(--color-ink) 50%, var(--color-bg))",
+  "color-mix(in srgb, var(--color-ink) 75%, var(--color-bg))",
+  "var(--color-ink)",
 ];
 
 function getLevel(count: number): number {
@@ -110,7 +110,7 @@ function ContributionGraph({ weeks }: { weeks: Week[] }) {
     <svg
       viewBox={`0 0 ${width} ${height}`}
       role="img"
-      aria-label="Contribution graph"
+      aria-label="GitHub contribution graph showing active days and total contributions"
       className="h-auto w-full max-w-[100%]"
     >
       {squares}
@@ -196,7 +196,7 @@ export default async function GitHubActivity() {
       : null;
 
   return (
-    <div className="mt-20 border border-line p-8 lg:px-16">
+    <div className="mt-10 border border-line p-5 sm:p-6">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-0">
         <h3 className="font-mono text-lg uppercase tracking-widest text-muted">
           GitHub Activity
@@ -213,7 +213,7 @@ export default async function GitHubActivity() {
 
       <div className="mt-6 flex flex-col items-center gap-8 sm:flex-row">
         <div>
-          <p className="text-3xl tracking-tight text-ink">
+          <p className="text-2xl tracking-tight text-ink">
             {stats ? totalContributions : "—"}
           </p>
           <p className="text-lg uppercase tracking-widest text-muted">
@@ -221,7 +221,7 @@ export default async function GitHubActivity() {
           </p>
         </div>
         <div>
-          <p className="text-3xl tracking-tight text-ink">
+          <p className="text-2xl tracking-tight text-ink">
             {stats ? activeDays : "—"}
           </p>
           <p className="text-lg uppercase tracking-widest text-muted">
@@ -229,7 +229,7 @@ export default async function GitHubActivity() {
           </p>
         </div>
         <div>
-          <p className="text-3xl tracking-tight text-ink">
+          <p className="text-2xl tracking-tight text-ink">
             {stats ? longestStreak : "—"}
           </p>
           <p className="text-lg uppercase tracking-widest text-muted">

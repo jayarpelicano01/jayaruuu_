@@ -27,20 +27,20 @@ const skills = [
 export default function About() {
   return (
     <section id="about" className="border-t border-line bg-paper">
-      <div className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-content px-5 py-12 sm:px-8 sm:py-16">
         <Reveal>
           <SectionHeading index="05" title="About" />
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="mt-8 text-2xl font-medium leading-snug tracking-tight sm:text-3xl lg:text-4xl">
+          <p className="mt-6 text-xl font-medium leading-snug tracking-tight sm:text-2xl">
             I&apos;m Jay Ar, a junior software developer who enjoys turning
             ideas into functional, well-designed digital products.
           </p>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <p className="mt-6 text-lg text-muted lg:text-2xl">
+          <p className="mt-4 text-base text-muted lg:text-lg">
             I focus on full-stack development, understanding both the
             frontend and the backend so I can build complete systems from idea
             to deployment. I care about clean architecture, data integrity,
@@ -49,7 +49,7 @@ export default function About() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <p className="mt-6 text-lg text-muted lg:text-2xl">
+          <p className="mt-4 text-base text-muted lg:text-lg">
             My background includes an OJT internship with the General Services
             Unit and ICT Department of the University of the Eastern
             Philippines, where I built and deployed a job request system during
@@ -60,7 +60,7 @@ export default function About() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-3 sm:grid-cols-2">
+        <div className="mt-8 grid gap-4">
           {skills.map((skill, i) => (
             <Reveal key={skill.name} delay={0.05 * i}>
               <div className="group flex h-full flex-col border border-line p-6 transition-colors duration-300 hover:border-ink/40">
