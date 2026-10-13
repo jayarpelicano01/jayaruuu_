@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Cormorant_Garamond } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 import { site } from "@/data/site";
 import WelcomeIntro from "@/components/ui/welcome-intro";
 import "./globals.css";
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  display: "swap",
+  weight: ["400", "500", "700"],
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     canonical: site.domain,
   },
   title: {
-    default: "Jay Ar Pelicano | Junior Software Developer",
-    template: "%s | Jay Ar Pelicano",
+    default: "Agustin Pelicano Jr | Junior Software Developer",
+    template: "%s | Agustin Pelicano Jr",
   },
   description:
-    "Portfolio of Jay Ar Pelicano, a Junior Software Developer and Full-Stack Developer building practical digital systems.",
+    "Portfolio of Agustin Pelicano Jr, a Full-Stack Developer building practical digital systems.",
   keywords: [
-    "Jay Ar Pelicano",
+    "Agustin Pelicano Jr",
     "Full-Stack Developer",
     "Junior Software Developer",
     "React",
@@ -40,19 +40,19 @@ export const metadata: Metadata = {
   authors: [{ name: site.fullName }],
   creator: site.handle,
   openGraph: {
-    title: "Jay Ar Pelicano | Junior Software Developer",
+    title: "Agustin Pelicano Jr | Junior Software Developer",
     description:
-      "Portfolio of Jay Ar Pelicano, a Junior Software Developer and Full-Stack Developer building practical digital systems.",
+      "Portfolio of Agustin Pelicano Jr, a Junior Software Developer and Full-Stack Developer building practical digital systems.",
     url: site.domain,
-    siteName: "Jay Ar Pelicano",
+    siteName: "Agustin Pelicano Jr",
     type: "website",
     images: [{ url: site.ogImage, width: 1200, height: 630, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jay Ar Pelicano | Junior Software Developer",
+    title: "Agustin Pelicano Jr | Junior Software Developer",
     description:
-      "Portfolio of Jay Ar Pelicano, a Junior Software Developer and Full-Stack Developer.",
+      "Portfolio of Agustin Pelicano Jr , a Junior Software Developer and Full-Stack Developer.",
     images: [site.ogImage],
   },
   robots: {
@@ -85,7 +85,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${jetbrainsMono.variable} ${cormorant.variable} h-full antialiased`}
+        className={`${montserrat.variable} ${poppins.variable} h-full antialiased`}
       >
         <a
           href="#main"
