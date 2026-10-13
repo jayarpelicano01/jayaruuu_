@@ -24,7 +24,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-2 border-t border-line pt-6 font-mono text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>@{site.handle}</p>
-          <p>© {new Date().getFullYear()} {site.fullName}</p>
+          <p suppressHydrationWarning>© {new Date().getFullYear()} {site.fullName}</p>
         </div>
       </div>
     </footer>

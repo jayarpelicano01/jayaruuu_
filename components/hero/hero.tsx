@@ -1,9 +1,12 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { site } from "@/data/site";
-import TiltedCard from "@/components/ui/tilted-card/TiltedCard";
-import Magnetic from "@/components/ui/magnetic";
+import ArrowLink from "@/components/ui/arrow-link";
+
+const ease = [0.22, 1, 0.36, 1] as const;
+const honor = "Magna Cum Laude · Champion, UEP 2nd Arduino Innovator Challenge (2025)";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -11,112 +14,95 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-svh flex-col justify-center overflow-hidden border-b border-line"
+      className="relative flex min-h-svh flex-col overflow-hidden border-b border-line pt-16 md:block md:min-h-0"
     >
-      <div className="mx-auto grid w-full max-w-content grid-cols-[minmax(0,1fr)] gap-10 px-5 py-32 sm:px-8 lg:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-center lg:gap-16 lg:py-40">
-        <div className="min-w-0 pb-8">
-          <motion.p
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
-            className="font-mono text-sm uppercase tracking-widest text-muted sm:text-base"
-          >
-            Junior Software Developer · Philippines
-          </motion.p>
-
-          <h1 className="mt-6 text-[18vw] font-bold leading-[0.9] tracking-tight sm:text-8xl lg:whitespace-nowrap lg:text-[7rem] xl:text-[8rem]">
-            <motion.span
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const }}
-              className="block text-stroke lg:inline lg:mr-3"
-            >
-              Jay Ar
-            </motion.span>
-            <motion.span
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
-              className="block text-ink lg:inline"
-            >
-              Pelicano
-            </motion.span>
-          </h1>
-
-          <motion.p
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-10 font-mono text-xl uppercase tracking-widest text-muted sm:text-2xl lg:whitespace-nowrap"
-          >
-            Full-Stack Developer
-          </motion.p>
-
-          <motion.p
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-10 max-w-xxl text-xl leading-relaxed text-muted sm:text-2xl"
-          >
-            {site.tagline}
-          </motion.p>
-
+      <div className="mx-auto my-auto w-full max-w-content px-5 py-10 sm:px-8 md:py-20">
+        <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-16 flex flex-wrap items-center gap-6"
+            transition={{ duration: 0.7, ease }}
+            className="relative mx-auto w-full max-w-[9rem] sm:max-w-[12rem] md:mx-0 md:max-w-none"
           >
-            <Magnetic>
-              <a
-                href="#work"
-                className="group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink hover:text-muted focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-4"
-              >
-                View selected work
-              </a>
-            </Magnetic>
+            <div className="relative aspect-[3/4] w-full overflow-hidden border border-line bg-paper">
+              <Image
+                src="/images/profile/portrait.jpg"
+                alt={`Professional portrait of ${site.name}`}
+                fill
+                sizes="(min-width: 768px) 50vw, 40vw"
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
 
-          <motion.p
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-12 font-mono text-xs uppercase tracking-widest text-muted/70"
-          >
-            Magna Cum Laude · Champion, UEP 2nd Arduino Innovator Challenge (2025)
-          </motion.p>
+          <div className="min-w-0 text-center md:text-left">
+            <motion.h1
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease }}
+              className="whitespace-nowrap text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl md:text-3xl lg:text-4xl"
+            >
+              {site.fullName}
+            </motion.h1>
+
+            <motion.p
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease }}
+              className="mt-3 font-mono text-base uppercase tracking-widest text-muted md:mt-4"
+            >
+              {site.roles[1]}
+            </motion.p>
+
+            <motion.p
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease }}
+              className="mx-auto mt-4 max-w-xxl text-base leading-relaxed text-muted md:mx-0 lg:text-lg"
+            >
+              {site.tagline}
+            </motion.p>
+
+            <motion.p
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.35, ease }}
+              className="mx-auto mt-3 max-w-xxl text-base leading-relaxed text-muted md:mx-0 lg:text-lg"
+            >
+              {site.taglineSecond}
+            </motion.p>
+
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4, ease }}
+              className="mt-6 flex flex-wrap items-center justify-center gap-6 md:justify-start"
+            >
+              <ArrowLink href={site.github}>GitHub</ArrowLink>
+              <ArrowLink href={site.linkedin}>LinkedIn</ArrowLink>
+            </motion.div>
+          </div>
         </div>
 
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
-          className="relative mx-auto flex w-full max-w-[20rem] flex-col items-center sm:max-w-[22rem] lg:max-w-[28rem]"
+          transition={{ duration: 0.7, delay: 0.5, ease }}
+          className="mt-8 border-t border-line pt-4 md:mt-12 md:pt-6"
         >
-          <TiltedCard
-            imageSrc="/images/profile/portrait.jpg"
-            altText={`Professional portrait of ${site.name}`}
-            captionText={`@${site.handle}`}
-            containerHeight="28rem"
-            containerWidth="100%"
-            imageHeight="432px"
-            imageWidth="324px"
-            rotateAmplitude={10}
-            scaleOnHover={1.05}
-            showMobileWarning={false}
-            showTooltip={true}
-            displayOverlayContent={false}
-          />
-
-          <motion.p
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-6 inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink"
-          >
-            <span aria-hidden className="h-2 w-2 rounded-full bg-current" />
-            Open to work
-          </motion.p>
+          <div data-allow-overflow className="overflow-hidden">
+            <motion.p
+              animate={reduce ? {} : { x: ["0%", "-50%"] }}
+              transition={{ duration: 22, ease: "linear", repeat: Infinity }}
+              className="flex w-max whitespace-nowrap font-mono text-xs uppercase tracking-widest text-muted/70"
+            >
+              <span className="pr-8">{honor}</span>
+              <span aria-hidden="true" className="pr-8">
+                {honor}
+              </span>
+            </motion.p>
+          </div>
         </motion.div>
       </div>
     </section>
