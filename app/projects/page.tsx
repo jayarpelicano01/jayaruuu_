@@ -1,8 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
 import { projects } from "@/data/projects";
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/ui/reveal";
+import ProjectCard from "@/components/projects/project-card";
 
 export const metadata = {
   title: "Projects",
@@ -17,44 +16,10 @@ export default function ProjectsPage() {
         <SectionHeading index="/" title="Projects" meta="Case Studies" />
       </Reveal>
 
-      <div className="mt-8 grid gap-8 sm:grid-cols-2">
-        {projects.map((project) => (
+      <div className="mt-6 grid gap-4">
+        {projects.map((project, i) => (
           <Reveal key={project.slug}>
-            <Link
-              href={`/projects/${project.slug}`} prefetch={false}
-              className="group block border border-line bg-paper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden border-b border-line">
-                <Image
-                  src={project.image}
-                  alt={project.imageAlt}
-                  fill
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="flex flex-col gap-3 p-6">
-                <div className="flex items-baseline justify-between">
-                  <span className="font-mono text-xs text-muted">
-                    {project.number}
-                  </span>
-                  <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted">
-                    <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-current" />
-                    {project.availability.status}
-                  </span>
-                </div>
-                <h2 className="text-2xl font-medium tracking-tight transition-colors group-hover:text-muted">
-                  {project.title}
-                </h2>
-                <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                  {project.category}
-                </p>
-                <p className="text-sm text-muted">{project.description}</p>
-                <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                  {project.stack.join(" · ")}
-                </p>
-              </div>
-            </Link>
+            <ProjectCard project={project} eager={i < 2} />
           </Reveal>
         ))}
       </div>

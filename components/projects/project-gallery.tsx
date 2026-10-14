@@ -13,8 +13,6 @@ export default function ProjectGallery({ items }: { items: GalleryItem[] }) {
         defaultIndex={0}
         expandRatio={0.55}
         trigger="hover"
-        overlayColor="var(--color-ink)"
-        grayscale={false}
       />
     </div>
   );

@@ -17,7 +17,6 @@ const AccordionGallery = ({
   items = DEFAULT_ITEMS,
   defaultIndex = 2,
   accentColor = 'var(--color-bg)',
-  overlayColor = 'var(--color-ink)',
   textColor = 'var(--color-bg)',
   height = 460,
   gap = 10,
@@ -183,7 +182,6 @@ const AccordionGallery = ({
       className={`accordion-gallery${vertical ? ' accordion-gallery--vertical' : ''}${className ? ` ${className}` : ''}`}
       style={{
         '--ag-accent': accentColor,
-        '--ag-overlay': overlayColor,
         '--ag-text': textColor,
         '--ag-gap': `${gap}px`,
         '--ag-radius': `${radius}px`,
