@@ -1,5 +1,8 @@
 # AGENTS.md
 
+## Permission
+IF IN PLAN MODE DONT DARE TO DO ANY WRITING, ASK PERMISSION TO EXECUTE A TODO LIST BEFORE DOING SO
+
 ## Commands
 - `npm install`, `npm run dev` (http://localhost:3000), `npm run build`, `npm run start`, `npm run lint`
 - Verify with `npm run lint` + `npx tsc --noEmit`. No test script, no CI.
