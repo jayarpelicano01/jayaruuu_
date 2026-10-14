@@ -117,7 +117,7 @@ export default async function CaseStudyPage({ params }: Props) {
           </h2>
         </Reveal>
         <Reveal delay={0.05}>
-          <div className="relative mt-6 aspect-[16/9] overflow-hidden border border-line">
+          <div className="relative mt-6 aspect-[16/9] rounded-[20px] overflow-hidden border border-line">
             <Image
               src={project.image}
               alt={project.imageAlt}
@@ -144,7 +144,7 @@ export default async function CaseStudyPage({ params }: Props) {
               Problem
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-ink/85">
-              {cs.problem[0]}
+              {cs.problem}
             </p>
           </div>
           <div>
@@ -152,7 +152,7 @@ export default async function CaseStudyPage({ params }: Props) {
               Solution
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-ink/85">
-              {cs.solution[0]}
+              {cs.solution}
             </p>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default async function CaseStudyPage({ params }: Props) {
           {cs.features.map((feature) => (
             <li
               key={feature}
-              className="border border-line bg-paper px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-ink/80"
+              className="border border-line rounded-lg px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-ink/80"
             >
               {feature}
             </li>

@@ -13,7 +13,7 @@ export default function ProjectsPage() {
   return (
     <div className="mx-auto max-w-content px-5 pb-20 pt-32 sm:px-8 sm:pt-40">
       <Reveal>
-        <SectionHeading index="/" title="Projects" meta="Case Studies" />
+        <SectionHeading index="" title="Projects" meta="Case Studies" />
       </Reveal>
 
       <div className="mt-6 grid gap-4">
