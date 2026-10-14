@@ -13,7 +13,7 @@ export default function ArchitectureFlow({
       {steps.map((step, index) => (
         <li
           key={`${step.label}-${index}`}
-          className="flex min-w-0 gap-3 border border-line bg-paper p-4"
+          className="flex min-w-0 gap-3 border border-line rounded-[10px] p-4"
         >
           <span className="shrink-0 font-mono text-xs text-muted">
             {String(index + 1).padStart(2, "0")}
