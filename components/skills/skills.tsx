@@ -43,7 +43,7 @@ export default function Skills() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {skills.map((category, ci) => (
             <Reveal key={category.name} delay={0.05 * ci}>
-              <div className="h-full border border-line p-5">
+              <div className="h-full border rounded-[30px] border-line p-5">
                 <h3 className="font-mono text-sm uppercase tracking-widest text-muted">
                   {String(ci + 1).padStart(2, "0")} · {category.name}
                 </h3>

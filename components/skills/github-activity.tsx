@@ -196,7 +196,7 @@ export default async function GitHubActivity() {
       : null;
 
   return (
-    <div className="mt-10 border border-line p-5 sm:p-6">
+    <div className="mt-10 rounded-[30px] border border-line p-5 sm:p-6">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-0">
         <h3 className="font-mono text-lg uppercase tracking-widest text-muted">
           GitHub Activity

@@ -70,7 +70,7 @@ export default function Contact() {
         <Reveal delay={0.1} className="lg:pt-6">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 border border-line bg-paper p-6 sm:p-8"
+            className="flex flex-col gap-4 rounded-[30px] border border-line bg-paper p-6 sm:p-8"
           >
             <div className="flex flex-col gap-2">
               <label
@@ -136,7 +136,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="inline-flex items-center justify-center border border-ink bg-ink px-6 py-3 font-mono text-sm uppercase tracking-widest text-bg transition-colors hover:bg-transparent hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex items-center justify-center border border-ink bg-ink/90 px-6 py-3 font-mono text-sm uppercase tracking-widest text-bg transition-colors hover:bg-transparent hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === "sending" ? "Sending…" : "Send Message"}
             </button>
