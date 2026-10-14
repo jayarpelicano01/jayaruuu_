@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import {
   featuredProjectSlugs,
   projects,
@@ -9,6 +8,7 @@ import {
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/ui/reveal";
 import ArrowLink from "@/components/ui/arrow-link";
+import ProjectDemoLink from "@/components/projects/project-demo-link";
 
 const projectBySlug = new Map(projects.map((project) => [project.slug, project]));
 const selected = featuredProjectSlugs.map((slug) => {
@@ -19,82 +19,45 @@ const selected = featuredProjectSlugs.map((slug) => {
 
 type ProjectCardProps = {
   project: Project;
-  displayNumber: string;
   eager?: boolean;
-  aspect: string;
-  sizes: string;
 };
 
-function ProjectCard({
-  project,
-  displayNumber,
-  eager,
-  aspect,
-  sizes,
-}: ProjectCardProps) {
+function ProjectCard({ project, eager }: ProjectCardProps) {
   return (
-    <Link
-      href={`/projects/${project.slug}`} prefetch={false}
-      className="group flex h-full flex-col overflow-hidden border border-line bg-paper transition-all duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
-    >
-      <div className={`relative overflow-hidden border-b border-line ${aspect}`}>
+    <article className="group flex flex-row overflow-hidden rounded-2xl border border-transparent pl-4 transition-all py-3 duration-300 hover:border-ink">
+      <Link
+        href={`/projects/${project.slug}`}
+        aria-label={`View ${project.title} case study`}
+        className="relative w-28 sm:w-64 aspect-[16/10] shrink-0 self-center overflow-hidden rounded-[10px] sm:rounded-[20px]"
+      >
         <Image
           src={project.image}
           alt={project.imageAlt}
           fill
           loading={eager ? "eager" : "lazy"}
-          sizes={sizes}
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 640px) 112px, 256px"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
-      </div>
+      </Link>
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="flex items-center justify-between">
-          <span className="font-mono text-xs text-muted">
-            {displayNumber}
-          </span>
-          <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted">
-            <span
-              aria-hidden
-              className="h-1.5 w-1.5 rounded-full bg-current"
-            />
-            {project.availability.status}
-          </span>
-        </div>
+      <div className="flex min-w-0 flex-1 flex-col p-4 sm:p-5">
+        <Link href={`/projects/${project.slug}`} className="min-w-0">
+          <h3 className="text-base font-medium font-body tracking-tight sm:text-lg transition-colors duration-300 group-hover:text-ink">
+            {project.title}
+          </h3>
 
-        <h3 className="mt-5 text-2xl font-medium tracking-tight">
-          {project.title}
-        </h3>
-        <p className="mt-2 text-sm text-muted">{project.category}</p>
+          <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-muted font-mono">
+            {project.shortDescription ?? project.description}
+          </p>
+        </Link>
 
-        <p className="mt-4 max-w-md text-md leading-relaxed text-ink/80">
-          {project.shortDescription ?? project.description}
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-x-3 gap-y-1.5">
-          {project.stack.map((tech) => (
-            <span
-              key={tech}
-              className="border border-line px-2.5 py-1 font-mono text-xs uppercase tracking-widest text-muted"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-auto flex items-center gap-6 pt-5">
-          <span className="inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ink">
-            View Project
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </span>
+        <div className="mt-auto flex items-center justify-end gap-2 pt-3 sm:gap-3">
           {project.availability.demo ? (
-            <span className="font-mono text-sm uppercase tracking-widest text-muted">
-              Status: {project.availability.demo.label}
-            </span>
+            <ProjectDemoLink href={project.availability.demo.href} />
           ) : null}
         </div>
       </div>
-    </Link>
+    </article>
   );
 }
 
@@ -104,21 +67,15 @@ export default function SelectedWork() {
       <Reveal>
         <SectionHeading
           index="03"
-          title="Selected Work"
-          meta="Four flagship projects"
+          title="Featured Works"
+          meta="Projects I built and contributed to"
         />
       </Reveal>
 
-      <div className="mt-6 grid gap-5">
+      <div className="mt-6 grid gap-4">
         {selected.map((project, i) => (
           <Reveal key={project.slug}>
-            <ProjectCard
-              project={project}
-              displayNumber={String(i + 1).padStart(2, "0")}
-              eager={i < 2}
-              aspect="aspect-[16/10]"
-              sizes="100vw"
-            />
+            <ProjectCard project={project} eager={i < 2} />
           </Reveal>
         ))}
       </div>
