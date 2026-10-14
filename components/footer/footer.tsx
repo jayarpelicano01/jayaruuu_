@@ -16,9 +16,9 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-3">
-            <ArrowLink href={`mailto:${site.email}`}>Email</ArrowLink>
-            <ArrowLink href={site.github}>GitHub</ArrowLink>
-            <ArrowLink href={site.linkedin}>LinkedIn</ArrowLink>
+            <ArrowLink href={`mailto:${site.email}`}>email</ArrowLink>
+            <ArrowLink href={site.github}>github</ArrowLink>
+            <ArrowLink href={site.linkedin}>linkedin</ArrowLink>
           </div>
         </div>
 

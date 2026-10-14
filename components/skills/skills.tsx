@@ -24,7 +24,6 @@ const iconMap: Record<string, IconType> = {
   SiGit,
   SiGithub,
   SiVercel,
-  SiRender,
   SiPostman,
   SiClaude,
   SiGooglegemini,

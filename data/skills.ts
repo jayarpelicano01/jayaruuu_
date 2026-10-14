@@ -9,7 +9,6 @@ export const skills: SkillCategory[] = [
     skills: [
       { name: "HTML", icon: "SiHtml5" },
       { name: "CSS", icon: "SiCss" },
-      { name: "JavaScript", icon: "SiJavascript" },
       { name: "TypeScript", icon: "SiTypescript" },
       { name: "React", icon: "SiReact" },
       { name: "Next.js", icon: "SiNextdotjs" },
@@ -19,9 +18,10 @@ export const skills: SkillCategory[] = [
   {
     name: "Backend",
     skills: [
+      { name: "Java", icon: "SiOpenjdk" },
+      { name: "JavaScript", icon: "SiJavascript" },
       { name: "Node.js", icon: "SiNodedotjs" },
       { name: "Express.js", icon: "SiExpress" },
-      { name: "Java", icon: "SiOpenjdk" },
       { name: "Spring Boot", icon: "SiSpringboot" },
     ],
   },
@@ -40,7 +40,6 @@ export const skills: SkillCategory[] = [
       { name: "Git", icon: "SiGit" },
       { name: "GitHub", icon: "SiGithub" },
       { name: "Vercel", icon: "SiVercel" },
-      { name: "Render", icon: "SiRender" },
       { name: "Postman", icon: "SiPostman" },
     ],
   },

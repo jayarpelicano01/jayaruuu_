@@ -29,7 +29,7 @@ export default function Education() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="mt-8 border border-line">
+            <div className="mt-8 border border-line rounded-[30pxI ] sm:mt-12">
               <h3 className="border-b border-line px-6 py-4 font-mono text-xs uppercase tracking-widest text-muted sm:px-8">
                 Honors and Awards
               </h3>

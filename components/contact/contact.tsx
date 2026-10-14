@@ -49,11 +49,7 @@ export default function Contact() {
         <Reveal>
           <div>
             <h2 className="text-5xl font-medium leading-[0.95] tracking-tight sm:text-6xl">
-              Let&apos;s
-              <br />
-              work
-              <br />
-              together.
+              Let&apos;s work together.
             </h2>
             <p className="mt-8 max-w-md text-lg text-muted">
               I&apos;m currently open to opportunities as a Junior Software
