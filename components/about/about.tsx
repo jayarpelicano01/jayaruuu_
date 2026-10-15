@@ -24,7 +24,7 @@ export default function About() {
     <section id="about">
       <div className="mx-auto max-w-content px-5 py-12 sm:px-8 sm:py-16">
         <Reveal>
-          <SectionHeading index="05" title="About" />
+          <SectionHeading index="06" title="About" />
         </Reveal>
 
         <Reveal delay={0.1}>

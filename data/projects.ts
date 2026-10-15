@@ -29,6 +29,7 @@ export type Project = {
   shortDescription?: string
   role: string
   year: string
+  addedAt: string
   stack: string[]
   image: string
   imageAlt: string
@@ -53,6 +54,7 @@ export const projects: Project[] = [
       "Digitized the university's General Services Unit workflows, from job requests and purchase requisitions to accomplishment reports.",
     role: "Full-Stack Developer",
     year: "2026",
+    addedAt: "2026-03-01",
     stack: ["Next.js", "TypeScript", "Node.js", "Express.js", "MySQL"],
     image: "/images/projects/gsu.png",
     imageAlt: "GSU System dashboard interface",
@@ -107,13 +109,14 @@ export const projects: Project[] = [
   },
   {
     slug: "faura-farmer",
-    title: "Faura-Farmer: Personal Finance Tracker",
+    title: "Faura-Farmer: Personal Finance Tracker (Web)",
     description:
       "A full-stack personal finance tracker for manually recorded income and expenses.",
     shortDescription:
       "A personal finance app with credentials sign-in, user-scoped records, and Recharts dashboards.",
     role: "Solo Full-Stack Developer",
     year: "2026",
+    addedAt: "2026-08-20",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Auth.js", "Recharts"],
     image: "/images/projects/faura-farmer.png",
     imageAlt: "Faura-Farmer finance dashboard",
@@ -158,6 +161,70 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "faura-farmer-mobile",
+    title: "Faura-Farmer: Personal Finance Tracker (Android)",
+    description:
+      "An Android finance tracker with a local-first SQLite workspace, offline edits that sync when you reconnect, and a private local-only build for sharing with friends.",
+    shortDescription:
+      "Android finance tracker with offline-first sync and a local-only build.",
+    role: "Solo Mobile Developer",
+    year: "2026",
+    addedAt: "2026-09-10",
+    stack: ["React Native", "Expo", "Expo Router", "TypeScript", "SQLite", "NativeWind", "React Native Reanimated", "react-native-gifted-charts"],
+    image: "/images/projects/faura-mobile.jpg",
+    imageAlt: "Faura Farmer app logo",
+    availability: {
+      status: "Public demo",
+      availabilityNote:
+        "Public Android APKs for 64-bit phones via the releases page, which holds online v1.0.0 and offline v1.0.0-offline-friends. The online app signs in and syncs to a live backend, while the offline build runs a private local workspace with no sign-in and no sync. A browser visitor cannot run the APK in place and needs an Android device. Source repository is public and MIT licensed.",
+      demo: {
+        href: "https://github.com/jayarpelicano01/faura-farmer/releases",
+        label: "Download APKs",
+      },
+      source: {
+        href: "https://github.com/jayarpelicano01/faura-farmer",
+        label: "Source code",
+      },
+    },
+    gallery: [
+      { image: "/images/projects/gallery/faura-mobile/dashboard.jpg", alt: "Faura Farmer mobile dashboard with balance and recent transactions" },
+      { image: "/images/projects/gallery/faura-mobile/transactions.jpg", alt: "Faura Farmer mobile transactions list" },
+      { image: "/images/projects/gallery/faura-mobile/accounts.jpg", alt: "Faura Farmer mobile accounts list" },
+      { image: "/images/projects/gallery/faura-mobile/budgets.jpg", alt: "Faura Farmer mobile budgets screen" },
+      { image: "/images/projects/gallery/faura-mobile/categories.jpg", alt: "Faura Farmer mobile categories screen" },
+      { image: "/images/projects/gallery/faura-mobile/reports.jpg", alt: "Faura Farmer mobile reports with balance movement chart" },
+      { image: "/images/projects/gallery/faura-mobile/debts.jpg", alt: "Faura Farmer mobile debt ledger screen" },
+      { image: "/images/projects/gallery/faura-mobile/sidebar.jpg", alt: "Faura Farmer mobile sidebar navigation" },
+      { image: "/images/projects/gallery/faura-mobile/signin.jpg", alt: "Faura Farmer mobile sign in screen with offline option" },
+      { image: "/images/projects/gallery/faura-mobile/locked.jpg", alt: "Faura Farmer mobile biometric lock screen" },
+      { image: "/images/projects/gallery/faura-mobile/profile.jpg", alt: "Faura Farmer mobile profile screen" },
+      { image: "/images/projects/gallery/faura-mobile/profile-light.jpg", alt: "Faura Farmer mobile profile screen in light mode" },
+    ],
+    caseStudy: {
+      overview:
+        "Faura Farmer mobile is the Android counterpart of the Faura-Farmer web finance tracker, built with Expo and React Native. It stores accounts, categories, transactions, budgets, and debt records in on-device SQLite so the app works fully offline, and syncs queued changes back to the web backend when a connection returns. A separate offline build profile compiles a local-only variant with its own package ID, no sign-in, and no network calls, so it can be shared with people who just want a private tracker.",
+      problem:
+        "Phone use was the weak point of the web tracker, and tracking money on desktop depends on having a connection and a browser open. Sharing the app with friends who were not willing to hand financial data to a server was not possible at all.",
+      solution:
+        "I built an Expo app that keeps every record in on-device SQLite and queues writes while offline, then pushes and reconciles them against the backend when the connection returns. I also created a build-time offline mode that swaps the app name, scheme, and package ID and disables all sync paths, producing a second APK that can be handed to someone with no account at all.",
+      features: [
+        "Dashboard with current month income, expenses, and account balances",
+        "Accounts, transactions, categories, budgets, reports, and debt ledger screens",
+        "Offline-first CRUD that queues writes to an outbox and syncs FIFO on reconnect",
+        "Biometric app lock with device passcode fallback and configurable lock delay",
+        "Portable financial backup and restore through the device file system",
+        "Currency conversion for PHP and USD with exchange-rate handling",
+      ],
+      architecture: [
+        { label: "Expo Router screens", detail: "Dashboard, transactions, accounts, budgets, reports, debts, recurring, and settings tabs." },
+        { label: "Workspace provider", detail: "Holds active workspace state and exposes typed record hooks to every screen." },
+        { label: "Sync engine", detail: "Refreshes tokens, pushes FIFO outbox mutations, pulls canonical changes, and reconciles in one SQLite transaction." },
+        { label: "Local SQLite store", detail: "Accounts, categories, transactions, budgets, tombstones, sync cursor, and outbox entries, with SecureStore holding only session tokens." },
+        { label: "Build-time app mode", detail: "Offline builds rename the app, change the package ID, and remove all sync routes from reachable code." },
+      ],
+    },
+  },
+  {
     slug: "campuschoice",
     title: "CampusChoice",
     description:
@@ -166,6 +233,7 @@ export const projects: Project[] = [
       "A public interface demo covering voter access, election setup, administration, and result tallying.",
     role: "Full-Stack Developer",
     year: "2026",
+    addedAt: "2026-02-01",
     stack: ["JavaScript", "HTML/CSS", "MySQL"],
     image: "/images/projects/campuschoice.png",
     imageAlt: "CampusChoice voting interface",
@@ -216,6 +284,7 @@ export const projects: Project[] = [
       "A records and document workflow system with a Node.js and Express API backed by MySQL.",
     role: "Full-Stack Developer",
     year: "2025",
+    addedAt: "2025-11-01",
     stack: ["Node.js", "Express.js", "MySQL"],
     image: "/images/projects/urds.png",
     imageAlt: "URDS System interface",
@@ -264,6 +333,7 @@ export const projects: Project[] = [
       "A team IoT project combining sensor telemetry, irrigation controls, and a web dashboard.",
     role: "Lead Full-Stack Web Developer",
     year: "2025",
+    addedAt: "2025-08-01",
     stack: ["React", "Java", "Spring Boot", "Node.js", "Arduino", "C++", "MySQL"],
     image: "/images/projects/smart-farming.png",
     imageAlt: "Smart Farming IoT dashboard",
@@ -316,6 +386,7 @@ export const projects: Project[] = [
       "Crafts shop marketing site with a guided custom order builder.",
     role: "Designer & Developer",
     year: "2026",
+    addedAt: "2026-10-01",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Playwright"],
     image: "/images/projects/fleur-de-rosa.png",
     imageAlt:
@@ -374,6 +445,7 @@ export const projects: Project[] = [
       "An editorial portfolio that presents project work through typed case-study data.",
     role: "Designer & Developer",
     year: "2026",
+    addedAt: "2026-04-01",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     image: "/images/projects/portfolio.png",
     imageAlt: "This portfolio website",
@@ -431,4 +503,15 @@ export const featuredProjectSlugs = [
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug)
+}
+
+export const LATEST_WINDOW_DAYS = 90
+export const LATEST_MAX_COUNT = 3
+
+export function getLatestProjects(now: Date = new Date()): Project[] {
+  const cutoff = now.getTime() - LATEST_WINDOW_DAYS * 24 * 60 * 60 * 1000
+  return projects
+    .filter((p) => new Date(p.addedAt).getTime() >= cutoff)
+    .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime())
+    .slice(0, LATEST_MAX_COUNT)
 }
