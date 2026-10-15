@@ -35,7 +35,7 @@ export default function WelcomeIntro() {
   useEffect(() => {
     if (!visible) return;
     const controls = animate(0, 100, {
-      duration: 2.5,
+      duration: 2,
       ease: EASE,
       onUpdate: (v) => setProgress(Math.round(v)),
       onComplete: () => {
